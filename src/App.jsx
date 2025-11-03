@@ -1,10 +1,10 @@
 import React from 'react'
-import Admin from './pages/admin/Admin'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/admin/dashboard/Dashboard'
 import Clients from './pages/admin/clients/Clients'
 import Gifts from './pages/admin/gifts/Gifts'
 import Codes from './pages/admin/codes/Codes'
+import Admin from './pages/admin/Admin'
 
 const App = () => {
   return (
@@ -20,5 +20,3 @@ const App = () => {
 }
 
 export default App
-
-//asmosmaomso
