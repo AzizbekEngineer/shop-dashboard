@@ -95,7 +95,7 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-
+              
       <div className="dashboard__grid">
         <div className="dashboard__chart">
           <div className="dashboard__grid-card">

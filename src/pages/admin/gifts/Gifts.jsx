@@ -4,7 +4,9 @@ import "./gifts.scss"
 const Gifts = () => {
   return (
     <div className='gifts'>
-      <p>Gifts</p>
+      <div className="gifts-info">
+        <h3 className="gifts-info-title">Gifts</h3>
+      </div>
     </div>
   )
 }
