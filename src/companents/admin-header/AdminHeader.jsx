@@ -35,7 +35,7 @@ function AdminHeader({ setClose }) {
           <button className="products__top__right-profile-btn">
             <FaRegUser />
           </button>
-          <p className="products__top__right-profile-title">Ramziddin</p>
+          <p className="products__top__right-profile-title">RamziddinBek</p>
         </div>
         
       </div>
