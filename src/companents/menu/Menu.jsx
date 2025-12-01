@@ -28,7 +28,7 @@ const Menu = ({ setShow }) => {
         </div>
         <ul className="menu__top__list">
           <li className="menu__top__item">
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>Home gg</Link>
           </li>
           <li className="menu__top__item">
             <Link
