@@ -10,14 +10,13 @@ import { GoCodeSquare } from "react-icons/go";
 // import { useDispatch } from "react-redux";
 
 function Sidebar() {
+  //   const navigate = useNavigate();
+  //   const dispatch = useDispatch();
 
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-
-//   const handleLogout = () => {
-//     dispatch(logout());
-//     navigate("/");
-//   };
+  //   const handleLogout = () => {
+  //     dispatch(logout());
+  //     navigate("/");
+  //   };
 
   return (
     <section className="sidebar">
@@ -33,14 +32,14 @@ function Sidebar() {
             </NavLink>
           </li>
           <li className="sidebar__list">
-            <NavLink to={"clients"} className={"sidebar__left__text"}>
-             <TbUsers />
-              Clients
+            <NavLink to={"brands"} className={"sidebar__left__text"}>
+              <TbUsers />
+              Brands
             </NavLink>
           </li>
           <li className="sidebar__list">
             <NavLink to={"gifts"} className={"sidebar__left__text"}>
-             <LiaGiftSolid />
+              <LiaGiftSolid />
               Gifts
             </NavLink>
           </li>
