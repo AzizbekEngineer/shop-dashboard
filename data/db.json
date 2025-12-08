@@ -1,0 +1,16 @@
+{
+  "calculations": [
+    {
+      "id": 1,
+      "name": "Uy qurilishi",
+      "amount": 15000000,
+      "date": "2025-12-08"
+    },
+    {
+      "id": 2,
+      "name": "Ofis remonti",
+      "amount": 8000000,
+      "date": "2025-12-07"
+    }
+  ]
+}
