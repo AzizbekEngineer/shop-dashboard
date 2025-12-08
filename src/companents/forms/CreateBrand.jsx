@@ -1,6 +1,7 @@
 import "./CreateBrand.scss"
 
 const CreateBrand = () => {
+  
   return (
     <div className='forma'>
         <form className='forma-form'>
