@@ -6,10 +6,12 @@ import { MdLightMode, MdOutlineNightlightRound } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 
 function AdminHeader({ setClose }) {
-  const [hide, setHide] = useState(null)
   return (
     <div className="products__top">
-      <button className="products__top-btns" onClick={() => setClose((p) => !p)}>
+      <button
+        className="products__top-btns"
+        onClick={() => setClose((p) => !p)}
+      >
         <AiOutlineMenu />
       </button>
 
@@ -19,29 +21,17 @@ function AdminHeader({ setClose }) {
           <FiSearch />
         </div>
 
-        <div className="products__top__right-mode">
-          <button onClick={() => setHide(p => !p)} className="products__top__right-mode-btn">
-            {
-              hide
-                ?
-                <MdLightMode />
-                :
-                <MdOutlineNightlightRound />
-            }
-          </button>
-        </div>
+        <div className="products__top__right-mode"></div>
 
         <div className="products__top__right-profile">
           <button className="products__top__right-profile-btn">
             <FaRegUser />
           </button>
-          <p className="products__top__right-profile-title">RamziddinBek</p>
+          <p className="products__top__right-profile-title">R</p>
         </div>
-        
       </div>
     </div>
   );
 }
 
 export default AdminHeader;
-
