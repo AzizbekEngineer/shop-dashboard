@@ -1,16 +1,34 @@
 {
-  "calculations": [
+  "brand": [
     {
       "id": 1,
-      "name": "Uy qurilishi",
-      "amount": 15000000,
-      "date": "2025-12-08"
+      "name": "telefon"
     },
     {
       "id": 2,
-      "name": "Ofis remonti",
-      "amount": 8000000,
-      "date": "2025-12-07"
+      "name": "piyola"
+    }
+  ],
+  "Products": [
+    {
+      "id": 1,
+      "name": "samsung a51",
+      "rang": "gold",
+      "price": "24",
+      "count": 30,
+      "category": {
+        "id": 1,
+        "name": "telefon"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Gulli piyola",
+      "rang": "gold",
+      "category": {
+        "id": 2,
+        "name": "piyola"
+      }
     }
   ]
 }
