@@ -97,7 +97,7 @@ const Gifts = () => {
             </tr>
           </thead>
 
-          <tbody>
+          {/* <tbody>
             {filteredAssignments.map(assignment => (
               <tr key={assignment.id}>
                 <td className="gifts__index">{assignment.id}</td>
@@ -108,7 +108,7 @@ const Gifts = () => {
                 <td className="gifts__date">{assignment.usedAt}</td>
               </tr>
             ))}
-          </tbody>
+          </tbody> */}
 
         </table>
       </div>
