@@ -5,14 +5,87 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 15px;
 
         button {
             padding: 8px 16px;
             background: green;
             color: white;
-            border: 1px solid green;
+            border: 2px solid green;
             border-radius: 8px;
             font-size: 18px;
+            transition: 0.5s;
+
+
+            &:hover{
+                background: white;
+                color: green;
+            }
+        }
+    }
+
+    &__cards{
+
+
+        &-card{
+            width: 50%;
+            border: 1px solid black;
+            margin: 10px 0;
+            border-radius: 10px;
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: 0.7s;
+
+            &:hover{
+                background-color: white;
+                color:  black;
+                padding: 5px 25px;
+            }
+        }
+        }
+    
+
+    &-forma{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 10px;
+
+        &-label{
+            display: flex;
+            flex-direction: column;
+            text-transform: capitalize;
+            margin: 10px 0;
+
+
+            input{
+                margin-top: 5px;
+                text-transform: capitalize;
+                padding: 6px 1px;
+                outline: none;
+                border-radius: 10px;
+                border: 1px solid black;
+            }
+        }
+
+        &-btn{
+            padding: 6px 1px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            transition: 0.7s;
+            font-size: 15px;
+
+
+            &:hover{
+                background-color: white;
+                color: black;
+                font-size: 17px;
+            }
         }
     }
 }
+   

@@ -9,13 +9,20 @@
       "name": "piyola"
     },
     {
-      "id": "a2e77669-a457-4edc-956d-3bee1f24a6ec",
-      "name": "",
-      "title": "komp"
-    },
-    {
       "id": "0b7bab33-332a-4ac1-8629-badcca551a55",
       "name": "hol"
+    },
+    {
+      "id": "aedaca0c-734f-45b7-8c90-1122dbf5bfd6",
+      "name": "qwertyuio"
+    },
+    {
+      "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
+      "name": "new brand"
+    },
+    {
+      "id": "532fb438-eb57-4a28-95f0-73cd9d4fb781",
+      "name": "dcq"
     }
   ],
   "products": [
@@ -25,6 +32,26 @@
       "rang": "gold",
       "price": "24",
       "count": 30,
+      "category": {
+        "id": 1,
+        "name": "telefon"
+      }
+    },{
+      "id": 2,
+      "name": "samsung note 9",
+      "rang": "grey",
+      "price": "21",
+      "count": 33,
+      "category": {
+        "id": 1,
+        "name": "telefon"
+      }
+    },{
+      "id": 3,
+      "name": "redmi",
+      "rang": "blue",
+      "price": "15",
+      "count": 71,
       "category": {
         "id": 1,
         "name": "telefon"
