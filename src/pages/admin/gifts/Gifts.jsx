@@ -90,10 +90,10 @@ const Gifts = () => {
 
           <thead>
             <tr>
-              <th>INDEX</th>
-              <th>VALUE</th>
-              <th>GIFT</th>
-              <th>USED AT</th>
+              <th>Nomi</th>
+              <th>soni</th>
+              <th>narxi</th>
+              <th>itogo AT</th>
             </tr>
           </thead>
 
