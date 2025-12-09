@@ -38,9 +38,9 @@ function Sidebar() {
             </NavLink>
           </li>
           <li className="sidebar__list">
-            <NavLink to={"gifts"} className={"sidebar__left__text"}>
+            <NavLink to={"products"} className={"sidebar__left__text"}>
               <LiaGiftSolid />
-              Gifts
+              Products
             </NavLink>
           </li>
           <li className="sidebar__list">
