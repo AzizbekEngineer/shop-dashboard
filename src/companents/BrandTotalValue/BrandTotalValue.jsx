@@ -1,18 +1,18 @@
 import { useGetBrandsQuery } from "../../context/api/brandsApi";
-import "./BrandTotalValue.scss"
+import "./BrandTotalValue.scss";
 
+const BrandTotalValue = ({ brend }) => {
+  const { data: products } = useGetBrandsQuery();
 
-const BrandTotalValue = ({brend}) => {
-    const {data: products} = useGetBrandsQuery()
-    
-    const filterProducts = products.filter((p) => p.category?.id == brend.id)
-    console.log(filterProducts);
-    
+  const filterProducts = products.filter((p) => p.category?.id == brend.id);
+  // console.log(filterProducts);
+  //aziz
+
   return (
-    <div >
-        {/* <p>{filterProducts.count}</p> */}
+    <div>
+      <p>{filterProducts.count}</p>
     </div>
-  )
-}
+  );
+};
 
-export default BrandTotalValue
+export default BrandTotalValue;
