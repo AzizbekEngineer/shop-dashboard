@@ -41,7 +41,10 @@ const Brands = () => {
         {dataBrand?.map((el) => (
           <div key={el.id} className="brand__cards-card">
             <h3>{el?.name}</h3>
+
+            <div className="brand__cards-card-info">
             <BrandTotalValue brend={el} />
+            </div>
           </div>
         ))}
       </div>

@@ -30,20 +30,27 @@
         &-card{
             width: 50%;
             border: 1px solid black;
-            margin: 10px 0;
+            margin: 20px 0;
             border-radius: 10px;
-            padding: 5px 10px;
+            padding: 8px 10px;
             background-color: black;
             color: white;
             text-transform: capitalize;
             cursor: pointer;
             transition: 0.7s;
+            position: relative;
+
+
+          
+
 
             &:hover{
                 background-color: white;
                 color:  black;
-                padding: 5px 25px;
+                padding: 8px 25px;
             }
+
+
         }
         }
     

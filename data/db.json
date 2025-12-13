@@ -30,8 +30,9 @@
       "id": 1,
       "name": "samsung a51",
       "rang": "gold",
-      "price": "24",
+      "price": 24,
       "count": 30,
+      "itogo": 720,
       "category": {
         "id": 1,
         "name": "telefon"
@@ -40,8 +41,9 @@
       "id": 2,
       "name": "samsung note 9",
       "rang": "grey",
-      "price": "21",
+      "price": 21,
       "count": 33,
+      "itogo": 693,
       "category": {
         "id": 1,
         "name": "telefon"
@@ -50,8 +52,9 @@
       "id": 3,
       "name": "redmi",
       "rang": "blue",
-      "price": "15",
+      "price": 15,
       "count": 71,
+      "itogo": 1065,
       "category": {
         "id": 1,
         "name": "telefon"
