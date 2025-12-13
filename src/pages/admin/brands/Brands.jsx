@@ -43,7 +43,7 @@ const Brands = () => {
             <h3>{el?.name}</h3>
 
             <div className="brand__cards-card-info">
-            <BrandTotalValue brend={el} />
+              <BrandTotalValue brend={el} />
             </div>
           </div>
         ))}
@@ -62,7 +62,6 @@ const Brands = () => {
             action=""
           >
             <label className="brand-forma-label" htmlFor="">
-              {" "}
               brend nomini kiriting
               <input
                 required
