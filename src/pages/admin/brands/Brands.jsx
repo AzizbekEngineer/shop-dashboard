@@ -26,6 +26,7 @@ const Brands = () => {
     createCategory(formData);
     console.log(formData);
     setFormData(initialState);
+    setCreateModal(false)
     // navigate("/admin/manageCategory");
   };
 
@@ -74,9 +75,7 @@ const Brands = () => {
               />
             </label>
             <button
-              className="brand-forma-btn"
-              onClick={() => setCreateModal(false)}
-            >
+              className="brand-forma-btn">
               Create
             </button>
           </form>

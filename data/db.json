@@ -1,11 +1,11 @@
 {
   "brand": [
     {
-      "id": 1,
+      "id": "1",
       "name": "telefon"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "piyola"
     },
     {
@@ -27,7 +27,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "samsung a51",
       "rang": "gold",
       "price": 24,
@@ -37,8 +37,9 @@
         "id": 1,
         "name": "telefon"
       }
-    },{
-      "id": 2,
+    },
+    {
+      "id": "2",
       "name": "samsung note 9",
       "rang": "grey",
       "price": 21,
@@ -48,8 +49,9 @@
         "id": 1,
         "name": "telefon"
       }
-    },{
-      "id": 3,
+    },
+    {
+      "id": "3",
       "name": "redmi",
       "rang": "blue",
       "price": 15,
@@ -61,7 +63,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Gulli piyola",
       "rang": "gold",
       "category": {
