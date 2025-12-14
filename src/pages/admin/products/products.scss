@@ -1,17 +1,159 @@
-.product-cards{
+.product {
   padding: 15px;
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 
-  &-card{
-    border: 1px solid black;
-    border-radius: 10px;
+    button {
+      padding: 8px 16px;
+      background: green;
+      color: white;
+      border: 2px solid green;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: 0.5s;
+
+
+      &:hover {
+        background: white;
+        color: green;
+      }
+    }
+  }
+
+
+&-cards {
+
+
+  table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background: black;
+    cursor: pointer;
+    transition: 0.7s;
+    border-bottom: 1px solid white;
+
+    &:hover{
+      background-color: #3a3a42;
+    }
+
+    th {
+      padding: 18px 10px;
+      text-align: left;
+      color: white;
+      text-transform: capitalize;
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: rgb(20, 20, 20);
+      cursor: pointer;
+      transition: 0.7s;
+      border-bottom: 1px solid white;
+
+
+      &:hover{
+        background-color: #3a3a42;
+      }
+
+      td {
+        color: white;
+        padding: 12px 10px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+ 
+}
+
+
+&-forma{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 0;
+
+  &-brends{
+    // border: 2px solid rebeccapurple;
+
+
+    select{
+      width: 50%;
+      border: 1px solid black;
+      border-radius: 8px;
+      padding: 6px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  label{
     margin: 10px 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    text-transform: capitalize;
+    flex-direction: column;
+
+    span{
+      margin: 5px 0;
+    }
+
+    input{
+      padding: 6px 0;
+      outline: none;
+      border-radius: 10px;
+      border: 1px solid black;
+    }
+
+    
   }
+
+  .sizes-parent{
+    margin: 20px 0;
+
+    &-spen{
+      margin: 0;
+    }
+
+    &-child{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 10px 0;
+      margin-top: 5px;
+      padding: 0 10px;
+    }
+  }
+
+
+  .btn{
+    background-color: black;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.7s;
+
+
+    &:hover{
+      background-color: white;
+      color: black;
+    }
+  }
+
+}
+
+
+
+
 }
 
 

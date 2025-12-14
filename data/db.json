@@ -2,7 +2,8 @@
   "brand": [
     {
       "id": "1",
-      "name": "telefon"
+      "name": "telefon",
+      "count": 30
     },
     {
       "id": "2",
@@ -23,9 +24,17 @@
     {
       "id": "532fb438-eb57-4a28-95f0-73cd9d4fb781",
       "name": "dcq"
+    },
+    {
+      "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
+      "name": "Energetik"
+    },
+    {
+      "id": "415cc5ec-fcbc-4094-a10b-738e97b40781",
+      "name": "adidas"
     }
   ],
-  "products": [
+  "product": [
     {
       "id": "1",
       "name": "samsung a51",
@@ -33,7 +42,7 @@
       "price": 24,
       "count": 30,
       "itogo": 720,
-      "category": {
+      "brand": {
         "id": 1,
         "name": "telefon"
       }
@@ -45,7 +54,7 @@
       "price": 21,
       "count": 33,
       "itogo": 693,
-      "category": {
+      "brand": {
         "id": 1,
         "name": "telefon"
       }
@@ -57,7 +66,7 @@
       "price": 15,
       "count": 71,
       "itogo": 1065,
-      "category": {
+      "brand": {
         "id": 1,
         "name": "telefon"
       }
@@ -66,9 +75,67 @@
       "id": "2",
       "name": "Gulli piyola",
       "rang": "gold",
-      "category": {
+      "brand": {
         "id": 2,
         "name": "piyola"
+      }
+    },
+    {
+      "id": "a410a65c-7b0c-4872-a2d0-44ffdbcf0118",
+      "name": "sdfxcghvjb"
+    },
+    {
+      "id": "a410a65c-7b0c-4872-a2d0-44ffdbcf0118",
+      "name": "1234567qwertyu"
+    },
+    {
+      "id": "bb5b21cd-9e9c-4b90-be0e-40e3d22dbff2",
+      "name": "j14",
+      "brand": {
+        "id": 1,
+        "name": "telefon"
+      }
+    },
+    {
+      "id": "005023a8-b9ca-4ca0-bda9-39a7b03292a9",
+      "name": "j222",
+      "brand": {
+        "id": 1,
+        "name": "telefon"
+      }
+    },
+    {
+      "id": "ea52f0af-c065-4abd-84fe-ba91970649b3",
+      "name": "Flesh",
+      "brand": {
+        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
+        "name": "Energetik"
+      }
+    },
+    {
+      "id": "25700fa6-fa5c-4cc6-82b9-1ff29ff197d5",
+      "name": "Garilla",
+      "rang": "kok",
+      "brand": {
+        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
+        "name": "Energetik"
+      }
+    },
+    {
+      "id": "30c5bbef-e61f-40a5-b405-d785a97839d3",
+      "name": "furbolka",
+      "rang": "qizil",
+      "price": "35000",
+      "count": "33",
+      "itogo": "",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "brand": {
+        "id": "415cc5ec-fcbc-4094-a10b-738e97b40781",
+        "name": "adidas"
       }
     }
   ]

@@ -7,7 +7,6 @@ import {
 } from "../../../context/api/brandsApi";
 import Modal from "../../../companents/Modal/Modal";
 import { useGetValue } from "../../../hook/useGetValue";
-import BrandTotalValue from "../../../companents/BrandTotalValue/BrandTotalValue";
 
 const initialState = {
   name: "",
@@ -42,10 +41,6 @@ const Brands = () => {
         {dataBrand?.map((el) => (
           <div key={el.id} className="brand__cards-card">
             <h3>{el?.name}</h3>
-
-            <div className="brand__cards-card-info">
-            <BrandTotalValue brend={el} />
-            </div>
           </div>
         ))}
       </div>
@@ -63,7 +58,6 @@ const Brands = () => {
             action=""
           >
             <label className="brand-forma-label" htmlFor="">
-              {" "}
               brend nomini kiriting
               <input
                 required
