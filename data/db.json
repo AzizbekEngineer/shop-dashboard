@@ -32,6 +32,14 @@
     {
       "id": "415cc5ec-fcbc-4094-a10b-738e97b40781",
       "name": "adidas"
+    },
+    {
+      "id": "c569c219-2981-4067-b40e-e191003cdd7f",
+      "name": "demiks"
+    },
+    {
+      "id": "1ae772c3-ec86-42b6-9de8-e74e462ffcca",
+      "name": "obk"
     }
   ],
   "product": [
@@ -122,20 +130,145 @@
       }
     },
     {
-      "id": "30c5bbef-e61f-40a5-b405-d785a97839d3",
-      "name": "furbolka",
-      "rang": "qizil",
-      "price": "35000",
+      "id": "b77f62b4-62a5-4900-8396-029cd0a46391",
+      "name": "whatsApp",
+      "rang": "sariq",
+      "price": "19000",
+      "count": "36",
+      "itogo": "",
+      "sizes": [
+        {
+          "size": "S",
+          "count": 10
+        },
+        {
+          "size": "M",
+          "count": 10
+        },
+        {
+          "size": "L",
+          "count": 7
+        },
+        {
+          "size": "XL",
+          "count": 9
+        }
+      ],
+      "brand": {
+        "id": "1",
+        "name": "telefon"
+      }
+    },
+    {
+      "id": "b76f761b-e7bd-44b4-9c98-275797b642a1",
+      "name": "kaket",
+      "rang": "bejivi",
+      "price": "23000",
       "count": "33",
       "itogo": "",
       "sizes": [
-        "M",
-        "L",
-        "XL"
+        {
+          "size": "50",
+          "count": 11
+        },
+        {
+          "size": "52",
+          "count": 14
+        },
+        {
+          "size": "54",
+          "count": 8
+        }
       ],
       "brand": {
-        "id": "415cc5ec-fcbc-4094-a10b-738e97b40781",
-        "name": "adidas"
+        "id": "1ae772c3-ec86-42b6-9de8-e74e462ffcca",
+        "name": "obk"
+      }
+    },
+    {
+      "id": "82d43497-ac97-41f9-8d91-60906fb0aeaa",
+      "name": "yoqali",
+      "rang": "oq",
+      "price": "21000",
+      "count": "40",
+      "itogo": "",
+      "sizes": [
+        {
+          "size": "M",
+          "count": 10
+        },
+        {
+          "size": "L",
+          "count": 10
+        },
+        {
+          "size": "XL",
+          "count": 10
+        },
+        {
+          "size": "XXL",
+          "count": 10
+        }
+      ],
+      "brand": {
+        "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
+        "name": "new brand"
+      }
+    },
+    {
+      "id": "dbc8e16d-ca7a-4095-9ba5-e71de0412692",
+      "name": "selanik",
+      "rang": "qora",
+      "price": "15000",
+      "count": "20",
+      "itogo": "",
+      "sizes": [
+        {
+          "size": "S",
+          "count": 5
+        },
+        {
+          "size": "M",
+          "count": 5
+        },
+        {
+          "size": "L",
+          "count": 5
+        },
+        {
+          "size": "XL",
+          "count": 5
+        }
+      ],
+      "brand": {
+        "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
+        "name": "new brand"
+      }
+    },
+    {
+      "id": "0601cf22-1c9b-41bf-83ca-c4748e2a569a",
+      "name": "vilvet",
+      "rang": "hakki",
+      "price": "18997",
+      "count": "30",
+      "itogo": "",
+      "sizes": [
+        {
+          "size": "50",
+          "count": 10
+        },
+        {
+          "size": "52",
+          "count": 10
+        },
+        {
+          "size": "54",
+          "count": 10
+        }
+      ],
+      "brand": {
+        "id": "0b7bab33-332a-4ac1-8629-badcca551a55",
+        "name": "hol"
       }
     }
   ]

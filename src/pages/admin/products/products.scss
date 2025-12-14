@@ -114,6 +114,17 @@
     
   }
 
+  &-addSize{
+
+    select{
+      padding: 6px 2px;
+      outline: none;
+      border-radius: 10px;
+      width: 50%;
+    }
+
+  }
+
   .sizes-parent{
     margin: 20px 0;
 
@@ -141,6 +152,7 @@
     border-radius: 10px;
     border: 1px solid black;
     transition: 0.7s;
+    margin-top: 15px;
 
 
     &:hover{
