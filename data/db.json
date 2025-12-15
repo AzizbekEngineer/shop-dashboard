@@ -270,6 +270,28 @@
         "id": "0b7bab33-332a-4ac1-8629-badcca551a55",
         "name": "hol"
       }
+    },
+    {
+      "id": "79d9d3ef-37d1-49fd-976a-9a897bd83283",
+      "name": "Garilla",
+      "rang": "qizil",
+      "price": "250000",
+      "count": "25",
+      "itogo": "500000",
+      "sizes": [
+        {
+          "size": "50",
+          "count": 50
+        },
+        {
+          "size": "M",
+          "count": 20
+        }
+      ],
+      "brand": {
+        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
+        "name": "Energetik"
+      }
     }
   ]
 }
