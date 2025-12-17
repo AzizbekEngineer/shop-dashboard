@@ -44,6 +44,12 @@ function Sidebar() {
             </NavLink>
           </li>
           <li className="sidebar__list">
+            <NavLink to={"Sell"} className={"sidebar__left__text"}>
+              <LiaGiftSolid />
+              Sell Products
+            </NavLink>
+          </li>
+          <li className="sidebar__list">
             <NavLink to={"codes"} className={"sidebar__left__text"}>
               <GoCodeSquare />
               Codes
