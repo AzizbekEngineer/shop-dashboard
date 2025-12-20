@@ -7,7 +7,7 @@ const initialState = {
   brandId: "",
   productId: "",
   cellPrice: "",
-  sizes: [], // { size, count }
+  sizes: [],
 };
 
 const Sell = () => {
@@ -17,9 +17,11 @@ const Sell = () => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  const selectedProduct = products.find((p) => p.id === formData.productId);
+  const selectedProduct = products.find(
+    (p) => p.id === formData.productId
+  );
 
-  // 🔹 size qo‘shish / yangilash
+  /* ================= SIZE CHANGE ================= */
   const handleSizeChange = (size, count) => {
     setFormData((prev) => {
       const exists = prev.sizes.find((s) => s.size === size);
@@ -47,28 +49,32 @@ const Sell = () => {
     }));
   };
 
-  // 🔹 sotilgan umumiy son
+  /* ================= HISOB ================= */
   const soldTotal = formData.sizes.reduce(
     (sum, s) => sum + Number(s.count || 0),
     0
   );
 
-  // 🔹 itogo (sotuv summasi)
-  const itogo =
-    soldTotal * Number(formData.cellPrice || selectedProduct?.price || 0);
+  const sellPrice = Number(
+    formData.cellPrice || selectedProduct?.comingPrice || 0
+  );
 
-  // ================= SELL =================
+  const soldItogo = soldTotal * sellPrice;
+
+  /* ================= SELL ================= */
   const handleSellProduct = async (e) => {
     e.preventDefault();
 
-    if (!selectedProduct || formData.sizes.length === 0) {
+    if (!selectedProduct || soldTotal === 0) {
       alert("Kamida bitta razmer kiriting!");
       return;
     }
 
-    // 🛑 tekshiruv
+    // ❗ Tekshiruv
     for (let sell of formData.sizes) {
-      const stock = selectedProduct.sizes.find((s) => s.size === sell.size);
+      const stock = selectedProduct.sizes.find(
+        (s) => s.size === sell.size
+      );
 
       if (!stock || stock.count < sell.count) {
         alert(`${sell.size} razmerda yetarli mahsulot yo‘q`);
@@ -76,35 +82,81 @@ const Sell = () => {
       }
     }
 
-    // 🔹 sizes yangilash
+    /* ===== 1. SOLD REPORT ===== */
+    const soldReport = formData.sizes.map((sell) => {
+      const stock = selectedProduct.sizes.find(
+        (s) => s.size === sell.size
+      );
+
+      return {
+        size: sell.size,
+        before: stock.count,
+        sold: sell.count,
+        after: stock.count - sell.count,
+      };
+    });
+
+    /* ===== 2. PRODUCT UPDATE ===== */
     const updatedSizes = selectedProduct.sizes.map((s) => {
       const sold = formData.sizes.find((fs) => fs.size === s.size);
       return sold ? { ...s, count: s.count - sold.count } : s;
     });
 
-    const newCurrentAmount = updatedSizes.reduce((sum, s) => sum + s.count, 0);
+    const newCurrentAmount = updatedSizes.reduce(
+      (sum, s) => sum + s.count,
+      0
+    );
 
     const updatedProduct = {
       ...selectedProduct,
       sizes: updatedSizes,
       currentAmount: newCurrentAmount,
-      itogo: newCurrentAmount * selectedProduct.price,
     };
 
-    // 🔹 DB ga yozish
-    await fetch(`http://localhost:3000/products/${selectedProduct.id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedProduct),
-    });
+    /* ===== 3. SALE DATA ===== */
+    const saleData = {
+      id: crypto.randomUUID(),
+      productId: selectedProduct.id,
+      productName: selectedProduct.productName,
+      brandId: selectedProduct.brandId,
+      brandName: selectedProduct.brandName,
+      soldSizes: soldReport,
+      sellPrice,
+      totalSold: soldTotal,
+      soldItogo,
+      createdAt: new Date().toISOString(),
+    };
 
-    alert("Mahsulot muvaffaqiyatli sotildi ✅");
+    try {
+      /* ===== 4. SAVE SALE ===== */
+      await fetch("http://localhost:3000/sales", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(saleData),
+      });
 
-    setFormData(initialState);
+      /* ===== 5. UPDATE PRODUCT ===== */
+      await fetch(
+        `http://localhost:3000/products/${selectedProduct.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedProduct),
+        }
+      );
+
+      alert("Mahsulot muvaffaqiyatli sotildi ✅");
+      setFormData(initialState);
+    } catch (err) {
+      console.error(err);
+      alert("Xatolik yuz berdi ❌");
+    }
   };
 
+  /* ================= JSX ================= */
   return (
     <div className="sell">
+
       <h3 className="sell-title">Mahsulot sotish</h3>
 
       <form className="sell-forma" onSubmit={handleSellProduct}>
@@ -120,7 +172,7 @@ const Sell = () => {
             <option value="">Brand tanlang</option>
             {brandData.map((b) => (
               <option key={b.id} value={b.id}>
-                {b.name}
+                {b.brandName}
               </option>
             ))}
           </select>
@@ -141,7 +193,7 @@ const Sell = () => {
               .filter((p) => p.brandId === formData.brandId)
               .map((p) => (
                 <option key={p.id} value={p.id}>
-                  {p.name}
+                  {p.productName}
                 </option>
               ))}
           </select>
@@ -149,27 +201,41 @@ const Sell = () => {
 
         {/* SIZES */}
         {selectedProduct && (
-          <div className="sell-forma-addSizes">
-            {selectedProduct.sizes.map((s) => (
-              <div key={s.size} className="sell-forma-addSizes-row">
-                <span>
-                  {s.size} ({s.count} ta bor)
-                </span>
+  <div className="sell-forma-addSizes">
+    {selectedProduct.sizes.map((s) => {
+      const soldCount = formData.sizes.find(fs => fs.size === s.size)?.count || 0;
+      return (
+        <div key={s.size} className="sell-forma-addSizes-row">
+          <span className="sell-forma-addSizes-row-span">
+            {s.size} ({s.count} ta bor)
+          </span>
 
-                <input
-                  type="number"
-                  min="0"
-                  placeholder="sotildi"
-                  onChange={(e) => handleSizeChange(s.size, e.target.value)}
-                />
+          <input
+            type="number"
+            min="0"
+            placeholder="sotildi"
+            value={soldCount}
+            onChange={(e) =>
+              handleSizeChange(s.size, e.target.value)
+            }
+          />
 
-                <button type="button" onClick={() => removeSize(s.size)}>
-                  ✕
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
+          {/* ✕ button */}
+          <button className="sell-forma-addSizes-row-btn"
+            type="button"
+            onClick={() => removeSize(s.size)}
+            style={{
+              
+            }}
+          >
+            ✕
+          </button>
+        </div>
+      );
+    })}
+  </div>
+)}
+
 
         {/* PRICE */}
         <label>
@@ -179,16 +245,16 @@ const Sell = () => {
             name="cellPrice"
             value={formData.cellPrice}
             onChange={handleChange}
-            placeholder={`Default: ${selectedProduct?.price || 0}`}
+            placeholder={`Default: ${selectedProduct?.comingPrice || 0}`}
           />
         </label>
 
         {/* ITOGO */}
         <div className="sell-itogo">
-          <strong>Itogo:</strong> {itogo}
+          <strong>Itogo:</strong> {soldItogo}
         </div>
 
-        <button type="submit">Sell</button>
+        <button className="sell-forma-bottomBtn" type="submit">Sell</button>
       </form>
     </div>
   );

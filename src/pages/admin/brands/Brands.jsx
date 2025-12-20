@@ -9,7 +9,7 @@ import Modal from "../../../companents/Modal/Modal";
 import { useGetValue } from "../../../hook/useGetValue";
 
 const initialState = {
-  name: "",
+  brandName: "",
   id: uuidv4(),
 };
 
@@ -40,7 +40,7 @@ const Brands = () => {
       <div className="brand__cards">
         {dataBrand?.map((el) => (
           <div key={el.id} className="brand__cards-card">
-            <h3>{el?.name}</h3>
+            <h3>{el?.brandName}</h3>
           </div>
         ))}
       </div>
@@ -61,9 +61,9 @@ const Brands = () => {
               brend nomini kiriting
               <input
                 required
-                value={formData.name}
+                value={formData.brandName}
                 onChange={handleChange}
-                name="name"
+                name="brandName"
                 placeholder="brand nomi"
                 type="text"
               />

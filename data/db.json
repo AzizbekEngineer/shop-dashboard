@@ -1,28 +1,127 @@
 {
-  "brand": [
+  "brands": [
     {
-      "id": "0c446f99-00df-4089-afe5-9aec64fc1a98",
-      "name": "obk"
+      "id": "1",
+      "brandName": "demiks"
+    },
+    {
+      "id": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "brandName": "obk"
+    },
+    {
+      "id": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
+      "brandName": "status",
+      "name": "a"
     }
   ],
   "products": [
     {
-      "id": "2e67e850-e232-408d-a694-09d393f7b828",
-      "name": "qwerty",
-      "rang": "sariq",
-      "price": 4000,
-      "totalAmount": 15,
-      "currentAmount": 4,
-      "itogo": 16000,
+      "id": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "comingPrice": 35000,
+      "mainAmount": 30,
+      "productRang": "bejivi",
+      "currentAmount": 28,
+      "camingItogo": 1050000,
+      "sana": "20-12-2025",
       "sizes": [
         {
           "size": "L",
-          "count": 4
+          "count": 10
+        },
+        {
+          "size": "XL",
+          "count": 8
+        },
+        {
+          "size": "2XL",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "productRang": "bej",
+      "comingPrice": 15000,
+      "comingTotalAmount": 20,
+      "currentAmount": 15,
+      "camingItogo": 300000,
+      "sizes": [
+        {
+          "size": "S",
+          "count": 7
+        },
+        {
+          "size": "M",
+          "count": 8
         }
       ],
-      "brandId": "0c446f99-00df-4089-afe5-9aec64fc1a98",
-      "brandName": "obk",
-      "createdAt": "2025-12-17T15:18:18.365Z"
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "createdAt": "2025-12-20T16:34:56.006Z"
+    }
+  ],
+  "sales": [
+    {
+      "id": "7135147f-49f4-4324-b054-ca23916a411d",
+      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "soldSizes": [
+        {
+          "size": "S",
+          "before": 10,
+          "sold": 1,
+          "after": 9
+        },
+        {
+          "size": "M",
+          "before": 10,
+          "sold": 2,
+          "after": 8
+        }
+      ],
+      "sellPrice": 19000,
+      "totalSold": 3,
+      "soldItogo": 57000,
+      "createdAt": "2025-12-20T16:44:36.011Z"
+    },
+    {
+      "id": "e02a0f76-c3a2-489e-bf6b-ee44a09c3ff5",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
+        {
+          "size": "XL",
+          "before": 10,
+          "sold": 2,
+          "after": 8
+        }
+      ],
+      "sellPrice": 41000,
+      "totalSold": 2,
+      "soldItogo": 82000,
+      "createdAt": "2025-12-20T16:53:40.203Z"
+    },
+    {
+      "id": "94535394-782d-4453-81f6-3e937fc46867",
+      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "soldSizes": [
+        {
+          "size": "S",
+          "before": 9,
+          "sold": 2,
+          "after": 7
+        }
+      ],
+      "sellPrice": 17000,
+      "totalSold": 2,
+      "soldItogo": 34000,
+      "createdAt": "2025-12-20T17:24:32.105Z"
     }
   ]
 }

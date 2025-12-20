@@ -23,10 +23,12 @@
     margin: 15px auto;
     padding: 15px 0;
     border-radius: 15px;/*  */
-    // background-color: black;
-    // color: white;
+    background-color: black;
+    color: white;
+    padding: 15px;
 
-    &-label {
+
+    label {
       margin: 10px;
 
       span {
@@ -45,21 +47,13 @@
     }
 
     .sell-forma-addSizes {
-      padding: 15px 0;
-      color: red;
+      padding: 15px;
+      color: white;
       display: flex;
       flex-direction: column;
       gap: 10px;
 
-      button {
-        display: block;
-        cursor: pointer;
-        background: red;
-        color: white;
-        border: none;
-        padding: 4px 8px;
-        font-size: 14px;
-      }
+    
 
       &-row {
         display: flex;
@@ -69,6 +63,55 @@
         padding: 10px 12px;
         border-radius: 12px;
         border: 1px solid #2a2d3a;
+
+
+
+        &-span{
+              opacity: 0.3;
+        }
+
+
+        input{
+          outline: none;
+          padding: 4px;
+          border-radius: 8px;
+          outline: none;
+        }
+
+
+        &-btn{
+             margin-left: 10px;
+             background: red;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              padding: 0 6px;
+        }
+      }
+    }
+
+    .sell-itogo{
+      padding-left: 15px;
+      margin-bottom: 10px;
+    }
+
+    &-bottomBtn{
+      padding: 6px;
+      border-radius: 10px;
+      outline: none;
+      border: 2px solid black;
+      font-size: 14px;
+      letter-spacing: 5px;
+      font-weight: bold;
+      margin: 0 auto;
+      width: 30%;
+
+
+      &:hover{
+        background: black;
+        color: white;
+        border: 2px solid white;
       }
     }
   }

@@ -10,11 +10,12 @@ import { useGetBrandsQuery } from "../../../context/api/brandsApi";
 import { useGetValue } from "../../../hook/useGetValue";
 
 const initialState = {
-  name: "",
+  productName: "",
   brandId: "",
-  brandName: "",
-  rang: "",
-  price: "",
+  productRang: "",
+  comingPrice: "",
+  mainAmount: "",
+  camingItogo: "",
   sizes: [], // { size, count }
 };
 
@@ -25,9 +26,10 @@ const Products = () => {
   const [createModal, setCreateModal] = useState(false);
 
   const { data: products = [], isLoading } = useGetProductsQuery();
-  const { data: brandData = [] } = useGetBrandsQuery();
+  const { data: brandData = [], } = useGetBrandsQuery();
+  
 
-  console.log(formData);
+
 
   if (isLoading) return null;
 
@@ -36,9 +38,11 @@ const Products = () => {
     (sum, s) => sum + Number(s.count || 0),
     0
   );
+  
 
   // 🔹 Itogo AUTO hisoblanadi
-  const itogo = Number(formData.price || 0) * totalAmount;
+  const itogo = Number(formData.comingPrice || 0) * totalAmount;
+  
 
   // 🔹 Create product
   const createHandleProduct = (e) => {
@@ -46,14 +50,14 @@ const Products = () => {
 
     const newProduct = {
       id: uuidv4(),
-      name: formData.name,
-      rang: formData.rang,
-      price: Number(formData.price),
+      productName: formData.productName,
+      productRang: formData.productRang,
+      comingPrice: Number(formData.comingPrice),
 
-      totalAmount: totalAmount,
+      comingTotalAmount: totalAmount,
       currentAmount: totalAmount,
 
-      itogo: itogo, // ✅ DB ga yoziladi
+      camingItogo: itogo, // ✅ DB ga yoziladi
 
       sizes: formData.sizes.map((s) => ({
         size: s.size,
@@ -61,7 +65,7 @@ const Products = () => {
       })),
 
       brandId: formData.brandId,
-      brandName: formData.brandName,
+      // brandName: formData.brandName,
 
       createdAt: new Date().toISOString(),
     };
@@ -71,7 +75,7 @@ const Products = () => {
     setCreateModal(false);
   };
 
-  const allSizes = ["S", "M", "L", "XL", "XXL", "50", "52", "54"];
+  const allSizes = ["S", "M", "L", "XL", "2XL", "50", "52", "54"];
 
   const handleAddSize = (e) => {
     const size = e.target.value;
@@ -103,6 +107,11 @@ const Products = () => {
     }));
   };
 
+
+
+
+
+
   return (
     <div className="product">
       <div className="product__top">
@@ -128,16 +137,20 @@ const Products = () => {
 
           <tbody>
             {products.map((product) => {
-              const brand = brandData.find((b) => b.id === product.brandId);
+             
+             const brand = brandData.find(
+                (b) => String(b.id) === String(product.brandId)
+              );
+             
 
               return (
                 <tr key={product.id}>
-                  <td>{product?.brandName || "—"}</td>
-                  <td>{product.name}</td>
-                  <td>{product.rang}</td>
+                  <td>{brand?.brandName || "—"}</td>
+                  <td>{product.productName}</td>
+                  <td>{product.productRang}</td>
                   <td>{product.currentAmount}</td>
-                  <td>{product.price}</td>
-                  <td>{product.itogo}</td>
+                  <td>{product.comingPrice}</td>
+                  <td>{product.camingItogo}</td>
                   <td>
                     {product.sizes?.map((s) => (
                       <div key={s.size}>
@@ -156,9 +169,11 @@ const Products = () => {
       </div>
 
       {/* ================= MODAL ================= */}
+
       {createModal && (
         <Modal close={setCreateModal} title="Mahsulot yaratish">
           <form className="product-forma" onSubmit={createHandleProduct}>
+
             <label>
               <span>Brand:</span>
               <select
@@ -180,7 +195,7 @@ const Products = () => {
                 <option value="">Brand tanlang</option>
                 {brandData.map((b) => (
                   <option key={b.id} value={b.id}>
-                    {b.name}
+                    {b.brandName}
                   </option>
                 ))}
               </select>
@@ -189,8 +204,8 @@ const Products = () => {
             <label>
               <span>Nomi:</span>
               <input
-                name="name"
-                value={formData.name}
+                name="productName"
+                value={formData.productName}
                 onChange={handleChange}
                 required
               />
@@ -199,8 +214,8 @@ const Products = () => {
             <label>
               <span>Rangi:</span>
               <input
-                name="rang"
-                value={formData.rang}
+                name="productRang"
+                value={formData.productRang}
                 onChange={handleChange}
                 required
               />
@@ -210,8 +225,8 @@ const Products = () => {
               <span>Narxi:</span>
               <input
                 type="number"
-                name="price"
-                value={formData.price}
+                name="comingPrice"
+                value={formData.comingPrice}
                 onChange={handleChange}
                 required
               />
