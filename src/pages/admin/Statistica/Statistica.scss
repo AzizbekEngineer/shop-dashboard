@@ -1,0 +1,84 @@
+.statistica{
+    padding: 15px;
+
+       .statisticaTable{
+  width: 100%;
+  border-collapse: collapse;
+
+  caption{
+    text-transform: uppercase;
+    padding: 15px 0;
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid #333;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    color: white;
+    border-bottom: 1px solid #333;
+    text-transform: capitalize;
+  }
+
+  thead {
+    background: #000;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #333;
+    background: black;
+  }
+}
+}
+
+@media(max-width: 430px){
+   .statisticaTable,
+  .statisticaTable thead,
+  .statisticaTable tbody,
+  .statisticaTable th,
+  .statisticaTable td,
+  .statisticaTable tr {
+    display: block;
+    width: 100%;
+  }
+
+  caption{
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* head yashiriladi */
+  .statisticaTable thead {
+    display: none;
+  }
+
+  /* har bir row = CARD */
+  .statisticaTable tr {
+    background: #0f1115;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  /* har bir katak */
+  .statisticaTable td {
+    display: flex;
+    // justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  /* LABEL (chap tomoni) */
+  .statisticaTable td::before {
+    content: attr(data-cell) ":";
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: capitalize;
+  }
+}

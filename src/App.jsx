@@ -8,16 +8,18 @@ import Login from "./pages/login/Login";
 import Brands from "./pages/admin/brands/Brands";
 import Products from "./pages/admin/products/Products";
 import Sell from "./pages/admin/codes/Sell/Sell";
+import Statistica from "./pages/admin/Statistica/Statistica";
 
 const App = () => {
   return (
     <Routes>
       <Route index element={<Login />} />
       <Route path="/" element={<Admin />}>
+        <Route path="Sell" element={<Sell/>} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="brands" element={<Brands />} />
         <Route path="products" element={<Products />} />
-        <Route path="Sell" element={<Sell/>} />
+        <Route path="Statistica" element={<Statistica/>} />
         <Route path="codes" element={<Codes />} />
         <Route path="profile" element={<Profile />} />
       </Route>

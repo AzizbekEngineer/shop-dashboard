@@ -10,8 +10,7 @@
     },
     {
       "id": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
-      "brandName": "status",
-      "name": "a"
+      "brandName": "status"
     }
   ],
   "products": [
@@ -22,13 +21,13 @@
       "comingPrice": 35000,
       "mainAmount": 30,
       "productRang": "bejivi",
-      "currentAmount": 28,
+      "currentAmount": 27,
       "camingItogo": 1050000,
       "sana": "20-12-2025",
       "sizes": [
         {
           "size": "L",
-          "count": 10
+          "count": 9
         },
         {
           "size": "XL",
@@ -60,6 +59,31 @@
       ],
       "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
       "createdAt": "2025-12-20T16:34:56.006Z"
+    },
+    {
+      "id": "1434e2fd-00ff-48f9-bf86-0888efb2ea11",
+      "productName": "ottoma",
+      "productRang": "hakki",
+      "comingPrice": 27000,
+      "comingTotalAmount": 33,
+      "currentAmount": 33,
+      "camingItogo": 891000,
+      "sizes": [
+        {
+          "size": "S",
+          "count": 11
+        },
+        {
+          "size": "M",
+          "count": 10
+        },
+        {
+          "size": "L",
+          "count": 12
+        }
+      ],
+      "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
+      "createdAt": "2025-12-21T07:05:15.507Z"
     }
   ],
   "sales": [
@@ -122,6 +146,42 @@
       "totalSold": 2,
       "soldItogo": 34000,
       "createdAt": "2025-12-20T17:24:32.105Z"
+    },
+    {
+      "id": "71d13192-8787-4548-8449-6df19528693b",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
+        {
+          "size": "2XL",
+          "before": 10,
+          "sold": 1,
+          "after": 9
+        }
+      ],
+      "sellPrice": 45000,
+      "totalSold": 1,
+      "soldItogo": 45000,
+      "createdAt": "2025-12-21T07:01:18.724Z"
+    },
+    {
+      "id": "b7a0a7c5-5476-480e-a079-75b1b3932fae",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
+        {
+          "size": "L",
+          "before": 10,
+          "sold": 1,
+          "after": 9
+        }
+      ],
+      "sellPrice": 41000,
+      "totalSold": 1,
+      "soldItogo": 41000,
+      "createdAt": "2025-12-21"
     }
   ]
 }

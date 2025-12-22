@@ -17,9 +17,7 @@ const Sell = () => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  const selectedProduct = products.find(
-    (p) => p.id === formData.productId
-  );
+  const selectedProduct = products.find((p) => p.id === formData.productId);
 
   /* ================= SIZE CHANGE ================= */
   const handleSizeChange = (size, count) => {
@@ -72,9 +70,7 @@ const Sell = () => {
 
     // ❗ Tekshiruv
     for (let sell of formData.sizes) {
-      const stock = selectedProduct.sizes.find(
-        (s) => s.size === sell.size
-      );
+      const stock = selectedProduct.sizes.find((s) => s.size === sell.size);
 
       if (!stock || stock.count < sell.count) {
         alert(`${sell.size} razmerda yetarli mahsulot yo‘q`);
@@ -84,9 +80,7 @@ const Sell = () => {
 
     /* ===== 1. SOLD REPORT ===== */
     const soldReport = formData.sizes.map((sell) => {
-      const stock = selectedProduct.sizes.find(
-        (s) => s.size === sell.size
-      );
+      const stock = selectedProduct.sizes.find((s) => s.size === sell.size);
 
       return {
         size: sell.size,
@@ -102,10 +96,7 @@ const Sell = () => {
       return sold ? { ...s, count: s.count - sold.count } : s;
     });
 
-    const newCurrentAmount = updatedSizes.reduce(
-      (sum, s) => sum + s.count,
-      0
-    );
+    const newCurrentAmount = updatedSizes.reduce((sum, s) => sum + s.count, 0);
 
     const updatedProduct = {
       ...selectedProduct,
@@ -124,7 +115,7 @@ const Sell = () => {
       sellPrice,
       totalSold: soldTotal,
       soldItogo,
-      createdAt: new Date().toISOString(),
+      createdAt: new Date().toLocaleDateString("uz-UZ"),
     };
 
     try {
@@ -136,14 +127,11 @@ const Sell = () => {
       });
 
       /* ===== 5. UPDATE PRODUCT ===== */
-      await fetch(
-        `http://localhost:3000/products/${selectedProduct.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedProduct),
-        }
-      );
+      await fetch(`http://localhost:3000/products/${selectedProduct.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedProduct),
+      });
 
       alert("Mahsulot muvaffaqiyatli sotildi ✅");
       setFormData(initialState);
@@ -156,7 +144,6 @@ const Sell = () => {
   /* ================= JSX ================= */
   return (
     <div className="sell">
-
       <h3 className="sell-title">Mahsulot sotish</h3>
 
       <form className="sell-forma" onSubmit={handleSellProduct}>
@@ -201,41 +188,38 @@ const Sell = () => {
 
         {/* SIZES */}
         {selectedProduct && (
-  <div className="sell-forma-addSizes">
-    {selectedProduct.sizes.map((s) => {
-      const soldCount = formData.sizes.find(fs => fs.size === s.size)?.count || 0;
-      return (
-        <div key={s.size} className="sell-forma-addSizes-row">
-          <span className="sell-forma-addSizes-row-span">
-            {s.size} ({s.count} ta bor)
-          </span>
+          <div className="sell-forma-addSizes">
+            {selectedProduct.sizes.map((s) => {
+              const soldCount = formData.sizes.find(
+                (fs) => fs.size === s.size
+              )?.count;
+              return (
+                <div key={s.size} className="sell-forma-addSizes-row">
+                  <span className="sell-forma-addSizes-row-span">
+                    {s.size} ({s.count} ta bor)
+                  </span>
 
-          <input
-            type="number"
-            min="0"
-            placeholder="sotildi"
-            value={soldCount}
-            onChange={(e) =>
-              handleSizeChange(s.size, e.target.value)
-            }
-          />
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="sotish soni"
+                    value={soldCount}
+                    onChange={(e) => handleSizeChange(s.size, e.target.value)}
+                  />
 
-          {/* ✕ button */}
-          <button className="sell-forma-addSizes-row-btn"
-            type="button"
-            onClick={() => removeSize(s.size)}
-            style={{
-              
-            }}
-          >
-            ✕
-          </button>
-        </div>
-      );
-    })}
-  </div>
-)}
-
+                  {/* ✕ button */}
+                  <button
+                    className="sell-forma-addSizes-row-btn"
+                    type="button"
+                    onClick={() => removeSize(s.size)}
+                  >
+                    ✕
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         {/* PRICE */}
         <label>
@@ -245,7 +229,9 @@ const Sell = () => {
             name="cellPrice"
             value={formData.cellPrice}
             onChange={handleChange}
-            placeholder={`Default: ${selectedProduct?.comingPrice || 0}`}
+            placeholder={`kelish narxi: ${
+              selectedProduct?.comingPrice || 0
+            } edi!`}
           />
         </label>
 
@@ -254,7 +240,9 @@ const Sell = () => {
           <strong>Itogo:</strong> {soldItogo}
         </div>
 
-        <button className="sell-forma-bottomBtn" type="submit">Sell</button>
+        <button className="sell-forma-bottomBtn" type="submit">
+          Sell
+        </button>
       </form>
     </div>
   );

@@ -10,25 +10,18 @@ import { GoCodeSquare } from "react-icons/go";
 // import { useDispatch } from "react-redux";
 
 function Sidebar() {
-  //   const navigate = useNavigate();
-  //   const dispatch = useDispatch();
-
-  //   const handleLogout = () => {
-  //     dispatch(logout());
-  //     navigate("/");
-  //   };
 
   return (
     <section className="sidebar">
       <div>
         <Link to={"/"} className="sidebar__top">
-          <h1>Compaign.uz</h1>
+          <h1>D.37</h1>
         </Link>
         <ul className="sidebar__item">
           <li className="sidebar__list">
-            <NavLink to={"dashboard"} className={"sidebar__left__text"}>
-              <RxDashboard />
-              Dashboard
+            <NavLink to={"Sell"} className={"sidebar__left__text"}>
+              <LiaGiftSolid />
+              Sell Products
             </NavLink>
           </li>
           <li className="sidebar__list">
@@ -44,9 +37,15 @@ function Sidebar() {
             </NavLink>
           </li>
           <li className="sidebar__list">
-            <NavLink to={"Sell"} className={"sidebar__left__text"}>
-              <LiaGiftSolid />
-              Sell Products
+            <NavLink to={"Statistica"} className={"sidebar__left__text"} >
+              <GoCodeSquare />
+              Statistica
+            </NavLink>
+          </li>
+          <li className="sidebar__list">
+            <NavLink to={"dashboard"} className={"sidebar__left__text"}>
+              <RxDashboard />
+              Dashboard
             </NavLink>
           </li>
           <li className="sidebar__list">

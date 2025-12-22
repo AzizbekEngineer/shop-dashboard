@@ -16,7 +16,7 @@ const initialState = {
   comingPrice: "",
   mainAmount: "",
   camingItogo: "",
-  sizes: [], // { size, count }
+  sizes: [], 
 };
 
 const Products = () => {
@@ -115,58 +115,58 @@ const Products = () => {
   return (
     <div className="product">
       <div className="product__top">
-        <h2>Mahsulotlar</h2>
+        <h2>Maxsulotlar</h2>
         <button onClick={() => setCreateModal(true)}>Mahsulot yaratish</button>
       </div>
 
-      {/* ================= TABLE ================= */}
-      <div className="product-cards">
-        <table>
-          <thead>
-            <tr>
-              <th>Brand</th>
-              <th>Nomi</th>
-              <th>Rangi</th>
-              <th>Soni</th>
-              <th>Narxi</th>
-              <th>Itogo</th>
-              <th>Razmerlar</th>
-              <th>Sana</th>
+        {/* SCROLL FAQAT SHU YERDA */}
+  <div className="product-cards">
+    
+    <table className="responsive-table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Nomi</th>
+          <th>Rangi</th>
+          <th>Soni</th>
+          <th>Narxi</th>
+          <th>Itogo</th>
+          <th>Razmerlar</th>
+          <th>Sana</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {products.map((product) => {
+          const brand = brandData.find(
+            (b) => String(b.id) === String(product.brandId)
+          );
+
+          return (
+            <tr key={product.id}>
+              <td data-label="brand">{brand?.brandName || "—"}</td>
+              <td data-label="nomi">{product.productName}</td>
+              <td data-label="rangi">{product.productRang}</td>
+              <td data-label="soni">{product.currentAmount}</td>
+              <td data-label="narxi">{product.comingPrice}</td>
+              <td data-label="itogo">{product.camingItogo}</td>
+              <td data-label="razmerlari">
+                {product.sizes?.map((s) => (
+                  <div key={s.size}>
+                    {s.size}: {s.count}
+                  </div>
+                ))}
+              </td>
+              <td data-label="sana">
+                {new Date(product.createdAt).toLocaleDateString("uz-UZ")}
+              </td>
             </tr>
-          </thead>
-
-          <tbody>
-            {products.map((product) => {
-             
-             const brand = brandData.find(
-                (b) => String(b.id) === String(product.brandId)
-              );
-             
-
-              return (
-                <tr key={product.id}>
-                  <td>{brand?.brandName || "—"}</td>
-                  <td>{product.productName}</td>
-                  <td>{product.productRang}</td>
-                  <td>{product.currentAmount}</td>
-                  <td>{product.comingPrice}</td>
-                  <td>{product.camingItogo}</td>
-                  <td>
-                    {product.sizes?.map((s) => (
-                      <div key={s.size}>
-                        {s.size}: {s.count}
-                      </div>
-                    ))}
-                  </td>
-                  <td>
-                    {new Date(product.createdAt).toLocaleDateString("uz-UZ")}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+          );
+        })}
+      </tbody>
+    </table>
+    
+  </div>
 
       {/* ================= MODAL ================= */}
 

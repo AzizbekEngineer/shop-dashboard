@@ -55,7 +55,6 @@ const Brands = () => {
           <form
             className="brand-forma"
             onSubmit={createHandleCategory}
-            action=""
           >
             <label className="brand-forma-label" htmlFor="">
               brend nomini kiriting

@@ -116,3 +116,126 @@
     }
   }
 }
+
+
+@media(max-width: 430px){
+  .sell {
+  padding: 5px;
+
+  &-title {
+    // text-transform: capitalize;
+    // text-align: center;
+    margin: 8px 0;
+    padding-bottom: 8px;
+    // word-spacing: 20px;
+    // letter-spacing: 5px;
+    // border-bottom: 2px solid transparent;
+    // transition: 0.7s;
+
+    // &:hover {
+    //   border-bottom: 2px solid black;
+    // }
+  }
+
+  &-forma {
+    // display: flex;
+    // flex-direction: column;
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    // background-color: black;
+    // color: white;
+
+
+    label {
+      // margin: 10px;
+
+      // span {
+      //   text-transform: capitalize;
+      //   padding: 0 8px;
+      // }
+
+      select,
+      input {
+        // width: 100%;
+        // outline: none;
+        padding: 6px;
+        border-radius: 8px;
+        // text-transform: capitalize;
+      }
+
+      
+    }
+
+    .sell-forma-addSizes {
+      padding: 8px;
+      // color: white;
+      // display: flex;
+      // flex-direction: column;
+      gap: 6px;
+
+    
+
+      &-row {
+        // display: flex;
+        // align-items: center;
+        gap: 8px;
+        background: #0f1115;
+        padding: 8px 10px;
+        // border-radius: 12px;
+        // border: 1px solid #2a2d3a;
+
+
+
+        &-span{
+              opacity: 0.3;
+        }
+
+
+        input{
+          // outline: none;
+          // padding: 4px;
+          border-radius: 6px;
+          // outline: none;
+        }
+
+
+        // &-btn{
+        //      margin-left: 10px;
+        //      background: red;
+        //       color: white;
+        //       border: none;
+        //       border-radius: 4px;
+        //       cursor: pointer;
+        //       padding: 0 6px;
+        // }
+      }
+    }
+
+    // .sell-itogo{
+    //   padding-left: 15px;
+    //   margin-bottom: 10px;
+    // }
+
+    &-bottomBtn{
+      // padding: 6px;
+      // border-radius: 10px;
+      // outline: none;
+      // border: 2px solid black;
+      // font-size: 14px;
+      // letter-spacing: 5px;
+      // font-weight: bold;
+      // margin: 0 auto;
+      width: 50%;
+
+
+      // &:hover{
+      //   background: black;
+      //   color: white;
+      //   border: 2px solid white;
+      // }
+    }
+  }
+}
+}
