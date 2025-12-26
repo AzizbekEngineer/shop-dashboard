@@ -1,323 +1,187 @@
 {
-  "brand": [
+  "brands": [
     {
       "id": "1",
-      "name": "telefon",
-      "count": 30
+      "brandName": "demiks"
     },
     {
-      "id": "2",
-      "name": "piyola"
+      "id": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "brandName": "obk"
     },
     {
-      "id": "0b7bab33-332a-4ac1-8629-badcca551a55",
-      "name": "hol"
-    },
-    {
-      "id": "aedaca0c-734f-45b7-8c90-1122dbf5bfd6",
-      "name": "qwertyuio"
-    },
-    {
-      "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
-      "name": "new brand"
-    },
-    {
-      "id": "532fb438-eb57-4a28-95f0-73cd9d4fb781",
-      "name": "dcq"
-    },
-    {
-      "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
-      "name": "Energetik"
-    },
-    {
-      "id": "415cc5ec-fcbc-4094-a10b-738e97b40781",
-      "name": "adidas"
-    },
-    {
-      "id": "c569c219-2981-4067-b40e-e191003cdd7f",
-      "name": "demiks"
-    },
-    {
-      "id": "1ae772c3-ec86-42b6-9de8-e74e462ffcca",
-      "name": "obk"
-    },
-    {
-      "id": "c7cd690c-b436-4139-92a6-9b88e0c032bb",
-      "name": "sumka"
+      "id": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
+      "brandName": "status"
     }
   ],
-  "product": [
+  "products": [
     {
-      "id": "1",
-      "name": "samsung a51",
-      "rang": "gold",
-      "price": 24,
-      "count": 30,
-      "itogo": 720,
-      "brand": {
-        "id": 1,
-        "name": "telefon"
-      }
+      "id": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "comingPrice": 35000,
+      "mainAmount": 30,
+      "productRang": "bejivi",
+      "currentAmount": 27,
+      "camingItogo": 1050000,
+      "sana": "20-12-2025",
+      "sizes": [
+        {
+          "size": "L",
+          "count": 9
+        },
+        {
+          "size": "XL",
+          "count": 8
+        },
+        {
+          "size": "2XL",
+          "count": 10
+        }
+      ]
     },
     {
-      "id": "2",
-      "name": "samsung note 9",
-      "rang": "grey",
-      "price": 21,
-      "count": 33,
-      "itogo": 693,
-      "brand": {
-        "id": 1,
-        "name": "telefon"
-      }
-    },
-    {
-      "id": "3",
-      "name": "redmi",
-      "rang": "blue",
-      "price": 15,
-      "count": 71,
-      "itogo": 1065,
-      "brand": {
-        "id": 1,
-        "name": "telefon"
-      }
-    },
-    {
-      "id": "2",
-      "name": "Gulli piyola",
-      "rang": "gold",
-      "brand": {
-        "id": 2,
-        "name": "piyola"
-      }
-    },
-    {
-      "id": "a410a65c-7b0c-4872-a2d0-44ffdbcf0118",
-      "name": "sdfxcghvjb"
-    },
-    {
-      "id": "a410a65c-7b0c-4872-a2d0-44ffdbcf0118",
-      "name": "1234567qwertyu"
-    },
-    {
-      "id": "bb5b21cd-9e9c-4b90-be0e-40e3d22dbff2",
-      "name": "j14",
-      "brand": {
-        "id": 1,
-        "name": "telefon"
-      }
-    },
-    {
-      "id": "005023a8-b9ca-4ca0-bda9-39a7b03292a9",
-      "name": "j222",
-      "brand": {
-        "id": 1,
-        "name": "telefon"
-      }
-    },
-    {
-      "id": "ea52f0af-c065-4abd-84fe-ba91970649b3",
-      "name": "Flesh",
-      "brand": {
-        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
-        "name": "Energetik"
-      }
-    },
-    {
-      "id": "25700fa6-fa5c-4cc6-82b9-1ff29ff197d5",
-      "name": "Garilla",
-      "rang": "kok",
-      "brand": {
-        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
-        "name": "Energetik"
-      }
-    },
-    {
-      "id": "b77f62b4-62a5-4900-8396-029cd0a46391",
-      "name": "whatsApp",
-      "rang": "sariq",
-      "price": "19000",
-      "count": "36",
-      "itogo": "",
+      "id": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "productRang": "bej",
+      "comingPrice": 15000,
+      "comingTotalAmount": 20,
+      "currentAmount": 15,
+      "camingItogo": 300000,
       "sizes": [
         {
           "size": "S",
-          "count": 10
-        },
-        {
-          "size": "M",
-          "count": 10
-        },
-        {
-          "size": "L",
           "count": 7
         },
         {
-          "size": "XL",
-          "count": 9
-        }
-      ],
-      "brand": {
-        "id": "1",
-        "name": "telefon"
-      }
-    },
-    {
-      "id": "b76f761b-e7bd-44b4-9c98-275797b642a1",
-      "name": "kaket",
-      "rang": "bejivi",
-      "price": "23000",
-      "count": "33",
-      "itogo": "",
-      "sizes": [
-        {
-          "size": "50",
-          "count": 11
-        },
-        {
-          "size": "52",
-          "count": 14
-        },
-        {
-          "size": "54",
+          "size": "M",
           "count": 8
         }
       ],
-      "brand": {
-        "id": "1ae772c3-ec86-42b6-9de8-e74e462ffcca",
-        "name": "obk"
-      }
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "createdAt": "2025-12-20T16:34:56.006Z"
     },
     {
-      "id": "82d43497-ac97-41f9-8d91-60906fb0aeaa",
-      "name": "yoqali",
-      "rang": "oq",
-      "price": "21000",
-      "count": "40",
-      "itogo": "",
-      "sizes": [
-        {
-          "size": "M",
-          "count": 10
-        },
-        {
-          "size": "L",
-          "count": 10
-        },
-        {
-          "size": "XL",
-          "count": 10
-        },
-        {
-          "size": "XXL",
-          "count": 10
-        }
-      ],
-      "brand": {
-        "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
-        "name": "new brand"
-      }
-    },
-    {
-      "id": "dbc8e16d-ca7a-4095-9ba5-e71de0412692",
-      "name": "selanik",
-      "rang": "qora",
-      "price": "15000",
-      "count": "20",
-      "itogo": "",
+      "id": "1434e2fd-00ff-48f9-bf86-0888efb2ea11",
+      "productName": "ottoma",
+      "productRang": "hakki",
+      "comingPrice": 27000,
+      "comingTotalAmount": 33,
+      "currentAmount": 33,
+      "camingItogo": 891000,
       "sizes": [
         {
           "size": "S",
-          "count": 5
+          "count": 11
         },
         {
           "size": "M",
-          "count": 5
+          "count": 10
         },
         {
           "size": "L",
-          "count": 5
+          "count": 12
+        }
+      ],
+      "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
+      "createdAt": "2025-12-21T07:05:15.507Z"
+    }
+  ],
+  "sales": [
+    {
+      "id": "7135147f-49f4-4324-b054-ca23916a411d",
+      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "soldSizes": [
+        {
+          "size": "S",
+          "before": 10,
+          "sold": 1,
+          "after": 9
         },
+        {
+          "size": "M",
+          "before": 10,
+          "sold": 2,
+          "after": 8
+        }
+      ],
+      "sellPrice": 19000,
+      "totalSold": 3,
+      "soldItogo": 57000,
+      "createdAt": "2025-12-20T16:44:36.011Z"
+    },
+    {
+      "id": "e02a0f76-c3a2-489e-bf6b-ee44a09c3ff5",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
         {
           "size": "XL",
-          "count": 5
+          "before": 10,
+          "sold": 2,
+          "after": 8
         }
       ],
-      "brand": {
-        "id": "4e6fd874-aa6a-4f45-ac10-0bae5af63383",
-        "name": "new brand"
-      }
+      "sellPrice": 41000,
+      "totalSold": 2,
+      "soldItogo": 82000,
+      "createdAt": "2025-12-20T16:53:40.203Z"
     },
     {
-      "id": "0601cf22-1c9b-41bf-83ca-c4748e2a569a",
-      "name": "vilvet",
-      "rang": "hakki",
-      "price": "18997",
-      "count": "30",
-      "itogo": "",
-      "sizes": [
+      "id": "94535394-782d-4453-81f6-3e937fc46867",
+      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "soldSizes": [
         {
-          "size": "50",
-          "count": 10
-        },
-        {
-          "size": "52",
-          "count": 10
-        },
-        {
-          "size": "54",
-          "count": 10
+          "size": "S",
+          "before": 9,
+          "sold": 2,
+          "after": 7
         }
       ],
-      "brand": {
-        "id": "0b7bab33-332a-4ac1-8629-badcca551a55",
-        "name": "hol"
-      }
+      "sellPrice": 17000,
+      "totalSold": 2,
+      "soldItogo": 34000,
+      "createdAt": "2025-12-20T17:24:32.105Z"
     },
     {
-      "id": "79d9d3ef-37d1-49fd-976a-9a897bd83283",
-      "name": "Garilla",
-      "rang": "qizil",
-      "price": "250000",
-      "count": "25",
-      "itogo": "500000",
-      "sizes": [
+      "id": "71d13192-8787-4548-8449-6df19528693b",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
         {
-          "size": "50",
-          "count": 50
-        },
-        {
-          "size": "M",
-          "count": 20
+          "size": "2XL",
+          "before": 10,
+          "sold": 1,
+          "after": 9
         }
       ],
-      "brand": {
-        "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
-        "name": "Energetik"
-      }
+      "sellPrice": 45000,
+      "totalSold": 1,
+      "soldItogo": 45000,
+      "createdAt": "2025-12-21T07:01:18.724Z"
     },
     {
-      "id": "5990e331-db6a-48fc-b1a1-48c676847d05",
-      "name": "Qora orqa sumka",
-      "rang": "qora",
-      "price": "150000",
-      "count": "20",
-      "itogo": 3000000,
-      "sizes": [
-        {
-          "size": "M",
-          "count": 15
-        },
+      "id": "b7a0a7c5-5476-480e-a079-75b1b3932fae",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
         {
           "size": "L",
-          "count": 5
+          "before": 10,
+          "sold": 1,
+          "after": 9
         }
       ],
-      "brand": {
-        "id": "c7cd690c-b436-4139-92a6-9b88e0c032bb",
-        "name": "sumka"
-      }
+      "sellPrice": 41000,
+      "totalSold": 1,
+      "soldItogo": 41000,
+      "createdAt": "2025-12-21"
     }
   ]
 }

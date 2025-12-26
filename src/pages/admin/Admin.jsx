@@ -5,7 +5,7 @@ import Sidebar from "../../companents/sidebar/Sidebar";
 import AdminHeader from "../../companents/admin-header/AdminHeader";
 
 const Admin = () => {
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
   return (
     <div className={`admin ${close ? "admin__close" : ""}`}>
       <Sidebar />

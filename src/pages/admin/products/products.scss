@@ -26,51 +26,32 @@
 
 
   &-cards {
+  width: 100%;
 
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
 
-      thead {
-        background: black;
-        cursor: pointer;
-        transition: 0.7s;
-        border-bottom: 1px solid white;
+    .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
 
-        &:hover {
-          background-color: #3a3a42;
-        }
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    color: white;
+  }
 
-        th {
-          padding: 18px 10px;
-          text-align: left;
-          color: white;
-          text-transform: capitalize;
-        }
-      }
+  thead {
+    background: #000;
+  }
 
-      tbody {
-        tr {
-          background-color: rgb(20, 20, 20);
-          cursor: pointer;
-          transition: 0.7s;
-          border-bottom: 1px solid white;
+  tbody tr {
+    border-bottom: 1px solid #333;
+    background: black;
+  }
+}
 
-
-          &:hover {
-            background-color: #3a3a42;
-          }
-
-          td {
-            color: white;
-            padding: 12px 10px;
-            text-transform: capitalize;
-          }
-        }
-      }
-    }
-
+  
 
   }
 
@@ -88,9 +69,10 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin: 10px 0;
 
       span {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         color: #9ca3af;
       }
@@ -184,17 +166,17 @@
       margin-top: 10px;
       padding: 14px;
       border-radius: 12px;
-      border: none;
+      border: 1px solid green;
       font-size: 16px;
       font-weight: 600;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #052e16;
+      background: green;
+      color: white;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.7s;
 
       &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
+        background: white;
+        color: green;
       }
 
       &:active {
@@ -202,5 +184,218 @@
       }
     }
   }
+
+}
+
+
+@media (max-width: 430px) {
+  .product {
+  padding: 15px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    button {
+      padding: 8px 16px;
+      background: green;
+      color: white;
+      border: 2px solid green;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: 0.5s;
+
+
+      &:hover {
+        background: white;
+        color: green;
+      }
+    }
+  }
+
+
+  &-cards {
+  // width: 100%;
+  width: auto;
+
+
+
+ .responsive-table,
+  .responsive-table thead,
+  .responsive-table tbody,
+  .responsive-table th,
+  .responsive-table td,
+  .responsive-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* head yashiriladi */
+  .responsive-table thead {
+    display: none;
+  }
+
+  /* har bir row = CARD */
+  .responsive-table tr {
+    background: #0f1115;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  /* har bir katak */
+  .responsive-table td {
+    display: flex;
+    // justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  /* LABEL (chap tomoni) */
+  .responsive-table td::before {
+    content: attr(data-label) ":";
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: capitalize;
+  }
+
+  }
+
+
+  &-forma {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0;
+    // background: #1a1d23;
+    border-radius: 16px;
+    color: #e5e7eb;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 10px 0;
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #9ca3af;
+      }
+
+      input,
+      select {
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #2a2d3a;
+        background: #0f1115;
+        color: #e5e7eb;
+        font-size: 15px;
+        transition: all 0.2s ease;
+        outline: none;
+
+        &::placeholder {
+          color: #6b7280;
+        }
+
+        &:focus {
+          border-color: #22c55e;
+          box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+        }
+      }
+    }
+
+    /* Brand select */
+    &-brends {
+      select {
+        width: 100%;
+      }
+    }
+
+    /* Size qo‘shish */
+    &-addSize {
+      select {
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+
+    /* Size list */
+    .sizes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .size-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #0f1115;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #2a2d3a;
+
+      .size-name {
+        min-width: 45px;
+        text-align: center;
+        padding: 6px 10px;
+        border-radius: 20px;
+        background: #22c55e;
+        color: #052e16;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      input {
+        flex: 1;
+        padding: 10px;
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        color: #ef4444;
+        font-size: 18px;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    /* Create button */
+    .btn {
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid green;
+      font-size: 16px;
+      font-weight: 600;
+      background: green;
+      color: white;
+      cursor: pointer;
+      transition: 0.7s;
+
+      &:hover {
+        background: white;
+        color: green;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+}
 
 }

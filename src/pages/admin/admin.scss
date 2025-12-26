@@ -10,3 +10,23 @@
     grid-template-columns: 60px 1fr;
   }
 }
+
+@media(max-width: 430px){
+  .admin {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  transition: 0.5s;
+  border: 1px solid crimson;
+
+ 
+
+
+  &__icon {
+    width: 10px;
+  }
+
+  &__close {
+    grid-template-columns: 50px 1fr;
+  }
+}
+}

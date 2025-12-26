@@ -10,44 +10,64 @@ import { useGetBrandsQuery } from "../../../context/api/brandsApi";
 import { useGetValue } from "../../../hook/useGetValue";
 
 const initialState = {
-  name: "",
+  productName: "",
   brandId: "",
-  rang: "",
-  price: "",
-  count: "",
-  itogo: "",
-  sizes: [],
+  productRang: "",
+  comingPrice: "",
+  mainAmount: "",
+  camingItogo: "",
+  sizes: [], 
 };
 
 const Products = () => {
-  const [createProduct] = useCreateProductMutation();
   const { formData, setFormData, handleChange } = useGetValue(initialState);
+
+  const [createProduct] = useCreateProductMutation();
   const [createModal, setCreateModal] = useState(false);
-  const { data: products, isLoading } = useGetProductsQuery();
-  const { data: brandData } = useGetBrandsQuery();
-  const { calcItogo, setcalcItogo } = useState(0);
+
+  const { data: products = [], isLoading } = useGetProductsQuery();
+  const { data: brandData = [], } = useGetBrandsQuery();
+  
+
+
 
   if (isLoading) return null;
 
-  console.log(formData.price * formData.count);
+  // 🔹 Umumiy mahsulot soni (sizes dan)
+  const totalAmount = formData.sizes.reduce(
+    (sum, s) => sum + Number(s.count || 0),
+    0
+  );
+  
 
+  // 🔹 Itogo AUTO hisoblanadi
+  const itogo = Number(formData.comingPrice || 0) * totalAmount;
+  
+
+  // 🔹 Create product
   const createHandleProduct = (e) => {
     e.preventDefault();
 
-    const selectedBrand = brandData.find((b) => b.id === formData.brandId);
-
     const newProduct = {
       id: uuidv4(),
-      name: formData.name,
-      rang: formData.rang,
-      price: formData.price,
-      count: formData.count,
-      itogo: (formData.price * formData.count),
-      sizes: formData.sizes,
-      brand: {
-        id: selectedBrand.id,
-        name: selectedBrand.name,
-      },
+      productName: formData.productName,
+      productRang: formData.productRang,
+      comingPrice: Number(formData.comingPrice),
+
+      comingTotalAmount: totalAmount,
+      currentAmount: totalAmount,
+
+      camingItogo: itogo, // ✅ DB ga yoziladi
+
+      sizes: formData.sizes.map((s) => ({
+        size: s.size,
+        count: Number(s.count),
+      })),
+
+      brandId: formData.brandId,
+      // brandName: formData.brandName,
+
+      createdAt: new Date().toISOString(),
     };
 
     createProduct(newProduct);
@@ -55,16 +75,14 @@ const Products = () => {
     setCreateModal(false);
   };
 
-  const allSizes = ["S", "M", "L", "XL", "XXL", "50", "52", "54"];
+  const allSizes = ["S", "M", "L", "XL", "2XL", "50", "52", "54"];
 
   const handleAddSize = (e) => {
     const size = e.target.value;
     if (!size) return;
 
     setFormData((prev) => {
-      if (prev.sizes.find((s) => s.size === size)) {
-        return prev;
-      }
+      if (prev.sizes.find((s) => s.size === size)) return prev;
 
       return {
         ...prev,
@@ -89,123 +107,138 @@ const Products = () => {
     }));
   };
 
+
+
+
+
+
   return (
     <div className="product">
       <div className="product__top">
-        <h2>Mahsulot</h2>
+        <h2>Maxsulotlar</h2>
         <button onClick={() => setCreateModal(true)}>Mahsulot yaratish</button>
       </div>
-      <div className="product-cards">
-        {products && (
-          <table>
-            <thead>
-              <tr>
-                <th>nomi:</th>
-                <th>rangi:</th>
-                <th>soni:</th>
-                <th>narxi:</th>
-                <th>itogo:</th>
-                <th>razmer s:</th>
-                <th>sana:</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr key={product.id}>
-                  <td>{product.name}</td>
-                  <td>{product.rang}</td>
-                  <td>{product.count}</td>
-                  <td>{product.price}</td>
-                  <td>{product.itogo}</td>
-                  <td>
-                    <div className="sizes-cell">
-                      {product.sizes?.map((s) => (
-                        <span key={s.size} className="size-badge">
-                          {s.size}: {s.count} <br />
-                        </span>
-                      ))}
-                    </div>
-                  </td>
 
-                  <td>12.15.2025</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
+        {/* SCROLL FAQAT SHU YERDA */}
+  <div className="product-cards">
+    
+    <table className="responsive-table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Nomi</th>
+          <th>Rangi</th>
+          <th>Soni</th>
+          <th>Narxi</th>
+          <th>Itogo</th>
+          <th>Razmerlar</th>
+          <th>Sana</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {products.map((product) => {
+          const brand = brandData.find(
+            (b) => String(b.id) === String(product.brandId)
+          );
+
+          return (
+            <tr key={product.id}>
+              <td data-label="brand">{brand?.brandName || "—"}</td>
+              <td data-label="nomi">{product.productName}</td>
+              <td data-label="rangi">{product.productRang}</td>
+              <td data-label="soni">{product.currentAmount}</td>
+              <td data-label="narxi">{product.comingPrice}</td>
+              <td data-label="itogo">{product.camingItogo}</td>
+              <td data-label="razmerlari">
+                {product.sizes?.map((s) => (
+                  <div key={s.size}>
+                    {s.size}: {s.count}
+                  </div>
+                ))}
+              </td>
+              <td data-label="sana">
+                {new Date(product.createdAt).toLocaleDateString("uz-UZ")}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    
+  </div>
+
+      {/* ================= MODAL ================= */}
 
       {createModal && (
-        <Modal
-          className="moodal"
-          close={setCreateModal}
-          title={"Mahsulot yaratish"}
-        >
-          <form
-            className="product-forma"
-            action=""
-            onSubmit={createHandleProduct}
-          >
-            <label className="product-forma-brends">
-              <span>Brand nomi:</span>
+        <Modal close={setCreateModal} title="Mahsulot yaratish">
+          <form className="product-forma" onSubmit={createHandleProduct}>
+
+            <label>
+              <span>Brand:</span>
               <select
-                name="brandId"
                 value={formData.brandId}
-                onChange={handleChange}
+                onChange={(e) => {
+                  const selectedId = e.target.value;
+                  const selectedBrand = brandData.find(
+                    (b) => b.id === selectedId
+                  );
+
+                  setFormData((prev) => ({
+                    ...prev,
+                    brandId: selectedId,
+                    brandName: selectedBrand ? selectedBrand.name : "",
+                  }));
+                }}
                 required
               >
                 <option value="">Brand tanlang</option>
-                {brandData?.map((el) => (
-                  <option key={el.id} value={el.id}>
-                    {el.name}
+                {brandData.map((b) => (
+                  <option key={b.id} value={b.id}>
+                    {b.brandName}
                   </option>
                 ))}
               </select>
             </label>
 
             <label>
-              <span>Mahsulot nomi:</span>
+              <span>Nomi:</span>
               <input
-                value={formData.name}
+                name="productName"
+                value={formData.productName}
                 onChange={handleChange}
-                name="name"
-                type="text"
-                placeholder="Mahsulot nomi"
                 required
               />
             </label>
 
             <label>
-              <span>Mahsulot rangi:</span>
+              <span>Rangi:</span>
               <input
-                value={formData.rang}
+                name="productRang"
+                value={formData.productRang}
                 onChange={handleChange}
-                name="rang"
-                type="text"
-                placeholder="Mahsulot rangi"
                 required
               />
             </label>
 
             <label>
-              <span>Mahsulot soni:</span>
+              <span>Narxi:</span>
               <input
-                value={formData.count}
-                onChange={handleChange}
-                name="count"
                 type="number"
-                placeholder="Mahsulot soni"
+                name="comingPrice"
+                value={formData.comingPrice}
+                onChange={handleChange}
                 required
               />
             </label>
 
-            <label className="product-forma-addSize">
-              <span>Razmer qo‘shish</span>
+            <label>
+              <span>Razmer qo‘shish:</span>
               <select onChange={handleAddSize} defaultValue="">
-                <option value="">Razmer tanlang</option>
-                {allSizes.map((size) => (
-                  <option className="addSize-option" key={size} value={size}>
-                    {size}
+                <option value="">Tanlang</option>
+                {allSizes.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
                   </option>
                 ))}
               </select>
@@ -214,18 +247,15 @@ const Products = () => {
             <div className="sizes-list">
               {formData.sizes.map((s) => (
                 <div key={s.size} className="size-row">
-                  <span className="size-name">{s.size}</span>
-
+                  <span>{s.size}</span>
                   <input
                     type="number"
-                    min=""
                     placeholder="soni"
                     value={s.count}
                     onChange={(e) =>
                       handleSizeCountChange(s.size, e.target.value)
                     }
                   />
-
                   <button type="button" onClick={() => removeSize(s.size)}>
                     ✕
                   </button>
@@ -233,27 +263,10 @@ const Products = () => {
               ))}
             </div>
 
-            <label>
-              <span>Mahsulot narxi:</span>
-              <input
-                value={formData.price}
-                onChange={handleChange}
-                name="price"
-                type="number"
-                placeholder="Mahsulot narxi"
-                required
-              />
-            </label>
-
+            {/* 🔥 AUTO ITOGO */}
             <label>
               <span>Itogo:</span>
-              <input
-                value={formData.itogo}
-                onChange={handleChange}
-                name="itogo"
-                type="text"
-                placeholder="itogo"
-              />
+              <input value={itogo} readOnly />
             </label>
 
             <button className="btn">Create</button>

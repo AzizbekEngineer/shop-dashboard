@@ -4,14 +4,14 @@ export const brandsApi = api.injectEndpoints({
   endpoints: (build) => ({
     getBrands: build.query({
       query: (params) => ({
-        url: "/brand",
+        url: "/brands",
         params,
       }),
       providesTags: ["Brand"],
     }),
     createBrand: build.mutation({
       query: (body) => ({
-        url: "/brand",
+        url: "/brands",
         method: "POST",
         body,
       }),
@@ -19,14 +19,14 @@ export const brandsApi = api.injectEndpoints({
     }),
     deleteBrand: build.mutation({
       query: (id) => ({
-        url: `/brand/${id}`,
+        url: `/brands/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["Brand"],
     }),
     updateBrand: build.mutation({
       query: ({ id, body }) => ({
-        url: `/brand/${id}`,
+        url: `/brands/${id}`,
         method: "PUT", // or "PATCH"
         body,
       }),
