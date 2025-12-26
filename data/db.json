@@ -40,6 +40,10 @@
     {
       "id": "1ae772c3-ec86-42b6-9de8-e74e462ffcca",
       "name": "obk"
+    },
+    {
+      "id": "c7cd690c-b436-4139-92a6-9b88e0c032bb",
+      "name": "sumka"
     }
   ],
   "product": [
@@ -291,6 +295,28 @@
       "brand": {
         "id": "c64eed40-e681-4953-bcef-1ec82286b8e3",
         "name": "Energetik"
+      }
+    },
+    {
+      "id": "5990e331-db6a-48fc-b1a1-48c676847d05",
+      "name": "Qora orqa sumka",
+      "rang": "qora",
+      "price": "150000",
+      "count": "20",
+      "itogo": 3000000,
+      "sizes": [
+        {
+          "size": "M",
+          "count": 15
+        },
+        {
+          "size": "L",
+          "count": 5
+        }
+      ],
+      "brand": {
+        "id": "c7cd690c-b436-4139-92a6-9b88e0c032bb",
+        "name": "sumka"
       }
     }
   ]

@@ -29,6 +29,8 @@ const Products = () => {
 
   if (isLoading) return null;
 
+  console.log(formData.price * formData.count);
+
   const createHandleProduct = (e) => {
     e.preventDefault();
 
@@ -40,7 +42,7 @@ const Products = () => {
       rang: formData.rang,
       price: formData.price,
       count: formData.count,
-      itogo: formData.itogo,
+      itogo: (formData.price * formData.count),
       sizes: formData.sizes,
       brand: {
         id: selectedBrand.id,
@@ -87,9 +89,6 @@ const Products = () => {
     }));
   };
 
-
-
-
   return (
     <div className="product">
       <div className="product__top">
@@ -122,7 +121,7 @@ const Products = () => {
                     <div className="sizes-cell">
                       {product.sizes?.map((s) => (
                         <span key={s.size} className="size-badge">
-                          {s.size}: {s.count}  <br />
+                          {s.size}: {s.count} <br />
                         </span>
                       ))}
                     </div>
@@ -202,9 +201,7 @@ const Products = () => {
 
             <label className="product-forma-addSize">
               <span>Razmer qo‘shish</span>
-              <select 
-              onChange={handleAddSize} defaultValue=""
-              >
+              <select onChange={handleAddSize} defaultValue="">
                 <option value="">Razmer tanlang</option>
                 {allSizes.map((size) => (
                   <option className="addSize-option" key={size} value={size}>
