@@ -11,6 +11,14 @@
     {
       "id": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
       "brandName": "status"
+    },
+    {
+      "id": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
+      "brandName": "lacos kurtka"
+    },
+    {
+      "id": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
+      "brandName": "Kurtkalar"
     }
   ],
   "products": [
@@ -45,16 +53,16 @@
       "productRang": "bej",
       "comingPrice": 15000,
       "comingTotalAmount": 20,
-      "currentAmount": 15,
+      "currentAmount": 7,
       "camingItogo": 300000,
       "sizes": [
         {
           "size": "S",
-          "count": 7
+          "count": 4
         },
         {
           "size": "M",
-          "count": 8
+          "count": 3
         }
       ],
       "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
@@ -84,6 +92,39 @@
       ],
       "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
       "createdAt": "2025-12-21T07:05:15.507Z"
+    },
+    {
+      "id": "6f3308ce-8773-4d3e-b1c5-801c39f71a92",
+      "productName": "Lacos",
+      "productRang": "qora",
+      "comingPrice": 100000,
+      "comingTotalAmount": 25,
+      "currentAmount": 15,
+      "camingItogo": 2500000,
+      "sizes": [
+        {
+          "size": "S",
+          "count": 3
+        },
+        {
+          "size": "M",
+          "count": 3
+        },
+        {
+          "size": "L",
+          "count": 3
+        },
+        {
+          "size": "XL",
+          "count": 3
+        },
+        {
+          "size": "2XL",
+          "count": 3
+        }
+      ],
+      "brandId": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
+      "createdAt": "2025-12-26T12:12:52.290Z"
     }
   ],
   "sales": [
@@ -182,6 +223,72 @@
       "totalSold": 1,
       "soldItogo": 41000,
       "createdAt": "2025-12-21"
+    },
+    {
+      "id": "d8cbfbb8-8855-4134-873e-faf4e3738e7b",
+      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productName": "kaket",
+      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
+      "soldSizes": [
+        {
+          "size": "S",
+          "before": 7,
+          "sold": 3,
+          "after": 4
+        },
+        {
+          "size": "M",
+          "before": 8,
+          "sold": 5,
+          "after": 3
+        }
+      ],
+      "sellPrice": 20000,
+      "totalSold": 8,
+      "soldItogo": 160000,
+      "createdAt": "2025-12-26"
+    },
+    {
+      "id": "a51c8b65-6186-4b12-9140-2fef63474914",
+      "productId": "6f3308ce-8773-4d3e-b1c5-801c39f71a92",
+      "productName": "Lacos",
+      "brandId": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
+      "soldSizes": [
+        {
+          "size": "S",
+          "before": 5,
+          "sold": 2,
+          "after": 3
+        },
+        {
+          "size": "M",
+          "before": 5,
+          "sold": 2,
+          "after": 3
+        },
+        {
+          "size": "L",
+          "before": 5,
+          "sold": 2,
+          "after": 3
+        },
+        {
+          "size": "XL",
+          "before": 5,
+          "sold": 2,
+          "after": 3
+        },
+        {
+          "size": "2XL",
+          "before": 5,
+          "sold": 2,
+          "after": 3
+        }
+      ],
+      "sellPrice": 150000,
+      "totalSold": 10,
+      "soldItogo": 1500000,
+      "createdAt": "2025-12-26"
     }
   ]
 }
