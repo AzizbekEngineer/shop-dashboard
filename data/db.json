@@ -29,8 +29,8 @@
       "comingPrice": 35000,
       "mainAmount": 30,
       "productRang": "bejivi",
-      "currentAmount": 27,
-      "camingItogo": 1050000,
+      "currentAmount": 26,
+      "comingItogo": 1050000,
       "sana": "20-12-2025",
       "sizes": [
         {
@@ -43,7 +43,7 @@
         },
         {
           "size": "2XL",
-          "count": 10
+          "count": 9
         }
       ]
     },
@@ -94,6 +94,7 @@
       "createdAt": "2025-12-21T07:05:15.507Z"
     },
     {
+<<<<<<< HEAD
       "id": "6f3308ce-8773-4d3e-b1c5-801c39f71a92",
       "productName": "Lacos",
       "productRang": "qora",
@@ -125,6 +126,31 @@
       ],
       "brandId": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
       "createdAt": "2025-12-26T12:12:52.290Z"
+=======
+      "id": "e2ec5104-ce39-4b64-9123-2073d1822b97",
+      "productName": "vadalas",
+      "productRang": "mavi",
+      "comingPrice": 18000,
+      "comingTotalAmount": 30,
+      "currentAmount": 30,
+      "camingItogo": 540000,
+      "sizes": [
+        {
+          "size": "S",
+          "count": 10
+        },
+        {
+          "size": "M",
+          "count": 10
+        },
+        {
+          "size": "L",
+          "count": 10
+        }
+      ],
+      "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
+      "createdAt": "2026-01-05T10:03:58.075Z"
+>>>>>>> origin/rawid
     }
   ],
   "sales": [
@@ -225,6 +251,7 @@
       "createdAt": "2025-12-21"
     },
     {
+<<<<<<< HEAD
       "id": "d8cbfbb8-8855-4134-873e-faf4e3738e7b",
       "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
       "productName": "kaket",
@@ -289,6 +316,24 @@
       "totalSold": 10,
       "soldItogo": 1500000,
       "createdAt": "2025-12-26"
+=======
+      "id": "79ce3ec7-1bf2-4eb7-9173-52dc0106fd39",
+      "productId": "p1",
+      "productName": "kardigan",
+      "brandId": "1",
+      "soldSizes": [
+        {
+          "size": "2XL",
+          "before": 10,
+          "sold": 1,
+          "after": 9
+        }
+      ],
+      "sellPrice": 46000,
+      "totalSold": 1,
+      "soldItogo": 46000,
+      "createdAt": "2026-01-05"
+>>>>>>> origin/rawid
     }
   ]
 }

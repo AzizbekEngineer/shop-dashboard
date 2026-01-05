@@ -8,6 +8,9 @@ import "./products.scss";
 import Modal from "../../../companents/Modal/Modal";
 import { useGetBrandsQuery } from "../../../context/api/brandsApi";
 import { useGetValue } from "../../../hook/useGetValue";
+import EditProducts from "../../../companents/EditProducts/EditProducts"
+
+
 
 const initialState = {
   productName: "",
@@ -20,6 +23,7 @@ const initialState = {
 };
 
 const Products = () => {
+
   const { formData, setFormData, handleChange } = useGetValue(initialState);
 
   const [createProduct] = useCreateProductMutation();
@@ -27,24 +31,25 @@ const Products = () => {
 
   const { data: products = [], isLoading } = useGetProductsQuery();
   const { data: brandData = [], } = useGetBrandsQuery();
+  const [editProducts, setEditProducts] = useState(null)
   
 
 
 
   if (isLoading) return null;
 
-  // 🔹 Umumiy mahsulot soni (sizes dan)
+  //  Umumiy mahsulot soni (sizes dan)
   const totalAmount = formData.sizes.reduce(
     (sum, s) => sum + Number(s.count || 0),
     0
   );
   
 
-  // 🔹 Itogo AUTO hisoblanadi
+  //  Itogo AUTO hisoblanadi
   const itogo = Number(formData.comingPrice || 0) * totalAmount;
   
 
-  // 🔹 Create product
+  //  Create product
   const createHandleProduct = (e) => {
     e.preventDefault();
 
@@ -57,7 +62,7 @@ const Products = () => {
       comingTotalAmount: totalAmount,
       currentAmount: totalAmount,
 
-      camingItogo: itogo, // ✅ DB ga yoziladi
+      camingItogo: itogo,
 
       sizes: formData.sizes.map((s) => ({
         size: s.size,
@@ -65,7 +70,6 @@ const Products = () => {
       })),
 
       brandId: formData.brandId,
-      // brandName: formData.brandName,
 
       createdAt: new Date().toISOString(),
     };
@@ -133,6 +137,7 @@ const Products = () => {
           <th>Itogo</th>
           <th>Razmerlar</th>
           <th>Sana</th>
+          <th>Tahrirlash</th>
         </tr>
       </thead>
 
@@ -160,6 +165,9 @@ const Products = () => {
               <td data-label="sana">
                 {new Date(product.createdAt).toLocaleDateString("uz-UZ")}
               </td>
+              <td data-label="tahrirlash">
+                <button className="responsive-table-btn" onClick={()=>setEditProducts(product)}>edit 📝</button>
+              </td>
             </tr>
           );
         })}
@@ -168,10 +176,23 @@ const Products = () => {
     
   </div>
 
+
+  {editProducts && (
+    <Modal close={setEditProducts} title="Mahsulotni tahrirlash">
+    <EditProducts product={editProducts} onClose={()=> setEditProducts(null)} />
+    </Modal>
+  )}
+
+
+
+
       {/* ================= MODAL ================= */}
+
 
       {createModal && (
         <Modal close={setCreateModal} title="Mahsulot yaratish">
+
+
           <form className="product-forma" onSubmit={createHandleProduct}>
 
             <label>
@@ -263,7 +284,7 @@ const Products = () => {
               ))}
             </div>
 
-            {/* 🔥 AUTO ITOGO */}
+            {/*  AUTO ITOGO */}
             <label>
               <span>Itogo:</span>
               <input value={itogo} readOnly />
