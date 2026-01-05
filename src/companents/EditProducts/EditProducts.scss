@@ -1,0 +1,180 @@
+.editProduct{
+
+&-editOverLay{
+
+    &-editForm{
+        display: flex;
+        flex-direction: column;
+
+        &-label{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+
+            &-span{
+                text-transform: capitalize;
+                margin-bottom: 5px;
+                opacity: 50%;
+            }
+
+            &-inp{
+                outline: none;
+                padding: 8px 5px;
+                text-transform: capitalize;
+                background: black;
+                outline: none;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                
+
+            }
+        }
+
+        .editSizes{
+            margin: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+
+
+        &-editSize{
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+            &-span{
+                margin-right: 15px;
+                font-weight: 700;
+            }
+
+            &-inp{
+                padding: 5px;
+                outline: none;
+                border-radius: 10px;
+                border: none;
+                background-color: black;
+                color: white;
+                width: 90px;
+            }
+        }
+
+        }
+
+        &-btn{
+            padding: 6px;
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+            text-transform: capitalize;
+            font-weight: 600;
+            border-radius: 15px;
+            width: 90%;
+            margin: auto;
+            cursor: pointer;
+            transition: 0.7s;
+
+
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+}
+
+
+@media(max-width: 430px){
+   .editProduct{
+
+&-editOverLay{
+
+    &-editForm{
+        // display: flex;
+        // flex-direction: column;
+
+        // &-label{
+        //     display: flex;
+        //     flex-direction: column;
+        //     margin: 10px;
+
+
+        //     &-span{
+        //         text-transform: capitalize;
+        //         margin-bottom: 5px;
+        //         opacity: 50%;
+        //     }
+
+        //     &-inp{
+        //         outline: none;
+        //         padding: 8px 5px;
+        //         text-transform: capitalize;
+        //         background: black;
+        //         outline: none;
+        //         color: white;
+        //         border: none;
+        //         border-radius: 10px;
+                
+
+        //     }
+        // }
+
+        .editSizes{
+            // margin: 15px;
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+
+
+        &-editSize{
+            // margin: 10px 0;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+
+
+            &-span{
+                margin-right: 8px;
+                font-weight: 400;
+            }
+
+            &-inp{
+                padding: 3px;
+                // outline: none;
+                // border-radius: 10px;
+                // border: none;
+                // background-color: black;
+                // color: white;
+                width: 40px;
+            }
+        }
+
+        }
+
+        &-btn{
+            padding: 6px;
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+            text-transform: capitalize;
+            font-weight: 600;
+            border-radius: 15px;
+            width: 90%;
+            margin: auto;
+            cursor: pointer;
+            transition: 0.7s;
+
+
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+} 
+}

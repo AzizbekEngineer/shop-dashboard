@@ -1,4 +1,3 @@
-import React from "react";
 import "./modal.scss";
 import { IoMdClose } from "react-icons/io";
 
