@@ -4,9 +4,11 @@ import "./brands.scss";
 import {
   useCreateBrandMutation,
   useGetBrandsQuery,
+  useDeleteBrandMutation,
 } from "../../../context/api/brandsApi";
 import Modal from "../../../companents/Modal/Modal";
 import { useGetValue } from "../../../hook/useGetValue";
+import EditBrends from "../../../EditBrends/EditBrends";
 
 const initialState = {
   brandName: "",
@@ -14,12 +16,15 @@ const initialState = {
 };
 
 const Brands = () => {
+
   const { formData, setFormData, handleChange } = useGetValue(initialState);
+
   const { data: dataBrand } = useGetBrandsQuery();
   const [createModal, setCreateModal] = useState(false);
-  // console.log(dataBrand);
 
   const [createCategory, { data, isSuccess }] = useCreateBrandMutation();
+
+
   const createHandleCategory = (e) => {
     e.preventDefault();
     createCategory(formData);
@@ -28,6 +33,12 @@ const Brands = () => {
     setCreateModal(false)
     // navigate("/admin/manageCategory");
   };
+
+  // ----- brends edit functions -------------
+
+  const [isEdit, setIsEdit] = useState(false)
+
+  // --------------------------------------------
 
   return (
     <div className="brand">
@@ -41,9 +52,16 @@ const Brands = () => {
         {dataBrand?.map((el) => (
           <div key={el.id} className="brand__cards-card">
             <h3>{el?.brandName}</h3>
+
+            <div className="brand__cards-card-edits">
+              <button onClick={()=>setIsEdit(el)}>📝</button>
+              <button>🗑</button>
+            </div>
           </div>
         ))}
       </div>
+
+
 
       {/* Create modal */}
       {createModal && (
@@ -74,6 +92,17 @@ const Brands = () => {
           </form>
         </Modal>
       )}
+
+      {/* ----- brends edit section--------------- */}
+
+      {isEdit && (
+        <Modal close={setIsEdit} title={"Brandni tahrirlash"}>
+          <EditBrends brend={isEdit} onClose={()=>setIsEdit(false)} />
+        </Modal>
+      )}
+
+
+
     </div>
   );
 };

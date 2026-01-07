@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import "./login.scss";
 
@@ -41,7 +41,7 @@ export default function LoginPage() {
       <div className="login-container">
         {/* Back Button */}
         <div className="back-btn">
-          <Link to="/dashboard" className="btn ghost">
+          <Link to="/Sell" className="btn ghost">
             ⬅ Back to Home
           </Link>
         </div>

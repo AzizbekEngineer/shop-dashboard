@@ -1,13 +1,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./sidebar.scss";
-import { FaArrowLeft, FaRegUser } from "react-icons/fa";
 import { LuLogOut } from "react-icons/lu";
-import { RxDashboard } from "react-icons/rx";
-import { TbUsers } from "react-icons/tb";
 import { LiaGiftSolid } from "react-icons/lia";
-import { GoCodeSquare } from "react-icons/go";
-// import { useDispatch } from "react-redux";
+import { HiShoppingCart } from "react-icons/hi";
+import { IoLayers } from "react-icons/io5";
+import { VscPieChart } from "react-icons/vsc";
 
 function Sidebar() {
 
@@ -20,13 +18,13 @@ function Sidebar() {
         <ul className="sidebar__item">
           <li className="sidebar__list">
             <NavLink to={"Sell"} className={"sidebar__left__text"}>
-              <LiaGiftSolid />
+              <HiShoppingCart />
               Sell Products
             </NavLink>
           </li>
           <li className="sidebar__list">
             <NavLink to={"brands"} className={"sidebar__left__text"}>
-              <TbUsers />
+              <IoLayers />
               Brands
             </NavLink>
           </li>
@@ -38,11 +36,14 @@ function Sidebar() {
           </li>
           <li className="sidebar__list">
             <NavLink to={"Statistica"} className={"sidebar__left__text"} >
-              <GoCodeSquare />
+              <VscPieChart />
               Statistica
             </NavLink>
           </li>
-          <li className="sidebar__list">
+
+
+
+          {/* <li className="sidebar__list">
             <NavLink to={"dashboard"} className={"sidebar__left__text"}>
               <RxDashboard />
               Dashboard
@@ -53,7 +54,7 @@ function Sidebar() {
               <GoCodeSquare />
               Codes
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="sidebar__btns">

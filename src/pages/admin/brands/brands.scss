@@ -39,6 +39,26 @@
             cursor: pointer;
             transition: 0.7s;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            &-edits{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 12%;
+                display: none;
+
+                button{
+                    background: transparent;
+                    // color: white;
+                    border: 1px solid black;
+                    padding: 5px;
+                    border-radius: 5px;
+                }
+            }
 
 
           
@@ -48,6 +68,10 @@
                 background-color: white;
                 color:  black;
                 padding: 8px 25px;
+
+                .brand__cards-card-edits{
+                    display: flex;
+                }
             }
 
 
@@ -139,6 +163,24 @@
             // cursor: pointer;
             // transition: 0.7s;
             // position: relative;
+
+
+            &-edits{
+                // display: flex;
+                // align-items: center;
+                // justify-content: space-between;
+                width: 15%;
+                // display: none;
+
+                button{
+                    // background: transparent;
+                    // color: white;
+                    // border: 1px solid black;
+                    padding: 3px;
+                    margin: auto 2px;
+                    // border-radius: 5px;
+                }
+            }
 
 
           

@@ -11,6 +11,10 @@
     {
       "id": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
       "brandName": "status"
+    },
+    {
+      "id": "60316553-7863-44c2-931f-0cf4b6389839",
+      "brandName": "bl"
     }
   ],
   "products": [
@@ -109,6 +113,27 @@
       ],
       "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
       "createdAt": "2026-01-05T10:03:58.075Z"
+    },
+    {
+      "id": "83b062c5-c136-4044-b4e6-954163a16204",
+      "productName": "ottoo",
+      "productRang": "yeshil",
+      "comingPrice": 12000,
+      "comingTotalAmount": 22,
+      "currentAmount": 22,
+      "camingItogo": 264000,
+      "sizes": [
+        {
+          "size": "S",
+          "count": 11
+        },
+        {
+          "size": "M",
+          "count": 11
+        }
+      ],
+      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
+      "createdAt": "2026-01-07T07:55:07.927Z"
     }
   ],
   "sales": [

@@ -1,0 +1,122 @@
+.editBrends{
+    padding: 15px 5px;
+
+    &-forma{
+        display: flex;
+        flex-direction: column;
+
+
+        &-label{
+            display: flex;
+            flex-direction: column;
+
+            &-span{
+                text-transform: capitalize;
+                margin: 10px auto;
+                font-weight: 600;
+                word-spacing: 10px;
+            }
+
+            &-inp{
+                width: 100%;
+                text-transform: capitalize;
+                padding: 5px;
+                overflow: hidden;
+                outline: none;
+                border-radius: 10px;
+                border: 1px solid black;
+                margin: 10px auto;
+            }
+        }
+
+
+        &-btns{
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 30%;
+
+
+            &-btn{
+                padding: 5px;
+                background-color: black;
+                color: white;
+                border: 1px solid black;
+                border-radius: 8px;
+                text-transform: capitalize;
+                font-weight: 600;
+                transition: 0.7s;
+
+
+                &:hover{
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 430px){
+  .editBrends{
+    padding: 15px 5px;
+
+    &-forma{
+        // display: flex;
+        // flex-direction: column;
+
+
+        // &-label{
+        //     display: flex;
+        //     flex-direction: column;
+
+        //     &-span{
+        //         text-transform: capitalize;
+        //         margin: 10px auto;
+        //         font-weight: 600;
+        //         word-spacing: 10px;
+        //     }
+
+        //     &-inp{
+        //         width: 100%;
+        //         text-transform: capitalize;
+        //         padding: 5px;
+        //         overflow: hidden;
+        //         outline: none;
+        //         border-radius: 10px;
+        //         border: 1px solid black;
+        //         margin: 10px auto;
+        //     }
+        // }
+
+
+        &-btns{
+            // margin: 10px auto;
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            width: 60%;
+
+
+            // &-btn{
+            //     padding: 5px;
+            //     background-color: black;
+            //     color: white;
+            //     border: 1px solid black;
+            //     border-radius: 8px;
+            //     text-transform: capitalize;
+            //     font-weight: 600;
+            //     transition: 0.7s;
+
+
+            //     &:hover{
+            //         background-color: white;
+            //         color: black;
+            //     }
+            // }
+        }
+    }
+}  
+}

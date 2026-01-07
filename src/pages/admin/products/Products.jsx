@@ -176,7 +176,7 @@ const Products = () => {
     
   </div>
 
-
+{/* =======EDIT PRODUCTS================= */}
   {editProducts && (
     <Modal close={setEditProducts} title="Mahsulotni tahrirlash">
     <EditProducts product={editProducts} onClose={()=> setEditProducts(null)} />

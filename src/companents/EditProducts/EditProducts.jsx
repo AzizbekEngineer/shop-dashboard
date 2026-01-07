@@ -67,6 +67,7 @@ const EditProducts = ({product, onClose}) => {
       currentAmount: editTotalAmount,
       camingItogo: editTotalItogo
     }
+    // shu yerda patch qilinadi
     console.log(updateProduct);
     
     onClose()
