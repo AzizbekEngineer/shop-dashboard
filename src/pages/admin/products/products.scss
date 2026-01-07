@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     button {
       padding: 8px 16px;
@@ -29,10 +29,49 @@
   width: 100%;
 
 
+  &-searForm{
+    margin: 10px 0;
+    width: 30%;
+    margin-left: auto;
+    // align-items: end;
+    // display: flex;
+    // justify-content: right;
+    // border: 1px solid cadetblue;
+
+    &-label{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-span{
+        text-transform: capitalize;
+        font-weight: 500;
+        margin: 10px 0 5px;
+        word-spacing: 5px;
+      }
+
+
+      &-inp{
+        padding: 5px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid black;
+      }
+
+    
+    }
+  }
+
+
 
     .responsive-table {
   width: 100%;
   border-collapse: collapse;
+
+  .sold-out{
+        opacity: 0.6;
+        pointer-events: none;
+    }
 
   th,
   td {
@@ -49,6 +88,9 @@
   tbody tr {
     border-bottom: 1px solid #333;
     background: black;
+
+
+    
   }
 
   &-btn{
@@ -238,6 +280,33 @@
   &-cards {
   // width: 100%;
   width: auto;
+
+
+    &-searForm{
+    // margin: 10px 0;
+    width: 90%;
+    // margin-left: auto;
+
+    // &-label{
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: space-between;
+
+    //   &-span{
+    //     text-transform: capitalize;
+    //     font-weight: 500;
+    //     margin: 10px 0 5px;
+    //     word-spacing: 5px;
+    //   }
+
+    //   &-inp{
+    //     padding: 5px;
+    //     border-radius: 10px;
+    //     outline: none;
+    //     border: 1px solid black;
+    //   }
+    // }
+  }
 
 
 

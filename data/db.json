@@ -134,6 +134,23 @@
       ],
       "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
       "createdAt": "2026-01-07T07:55:07.927Z"
+    },
+    {
+      "id": "8372b932-6634-4f64-896d-dea3d9f147ab",
+      "productName": "polo",
+      "productRang": "qora",
+      "comingPrice": 15000,
+      "comingTotalAmount": 1,
+      "currentAmount": 0,
+      "camingItogo": 15000,
+      "sizes": [
+        {
+          "size": "50",
+          "count": 0
+        }
+      ],
+      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
+      "createdAt": "2026-01-07T09:59:52.872Z"
     }
   ],
   "sales": [
@@ -250,6 +267,24 @@
       "totalSold": 1,
       "soldItogo": 46000,
       "createdAt": "2026-01-05"
+    },
+    {
+      "id": "bfd5c000-bcc1-49c5-9922-7b217728bcfb",
+      "productId": "8372b932-6634-4f64-896d-dea3d9f147ab",
+      "productName": "polo",
+      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
+      "soldSizes": [
+        {
+          "size": "50",
+          "before": 1,
+          "sold": 1,
+          "after": 0
+        }
+      ],
+      "sellPrice": 21000,
+      "totalSold": 1,
+      "soldItogo": 21000,
+      "createdAt": "2026-01-07"
     }
   ]
 }

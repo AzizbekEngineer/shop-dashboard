@@ -55,7 +55,7 @@ const Brands = () => {
 
             <div className="brand__cards-card-edits">
               <button onClick={()=>setIsEdit(el)}>📝</button>
-              <button>🗑</button>
+              {/* <button>🗑</button> */}
             </div>
           </div>
         ))}

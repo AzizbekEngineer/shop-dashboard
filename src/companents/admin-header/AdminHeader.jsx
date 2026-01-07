@@ -8,20 +8,20 @@ import { FiSearch } from "react-icons/fi";
 function AdminHeader({ setClose }) {
   return (
     <div className="products__top">
-      <button
-        className="products__top-btns"
-        onClick={() => setClose((p) => !p)}
-      >
+      <button className="products__top-btns"
+        onClick={() => setClose((p) => !p)}>
         <AiOutlineMenu />
       </button>
 
       <div className="products__top__right">
+        
         <div className="products__top__right-form">
-          <input placeholder="search..." type="text" />
-          <FiSearch />
+          <h1 className="products__top__right-form-title">Rich Samo</h1>
+          {/* <input placeholder="search..." type="text" />
+          <FiSearch /> */}
         </div>
 
-        <div className="products__top__right-mode"></div>
+        {/* <div className="products__top__right-mode"></div> */}
 
         <div className="products__top__right-profile">
           <button className="products__top__right-profile-btn">
@@ -30,6 +30,7 @@ function AdminHeader({ setClose }) {
           <p className="products__top__right-profile-title">R</p>
         </div>
       </div>
+
     </div>
   );
 }

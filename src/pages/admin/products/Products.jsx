@@ -9,6 +9,8 @@ import Modal from "../../../companents/Modal/Modal";
 import { useGetBrandsQuery } from "../../../context/api/brandsApi";
 import { useGetValue } from "../../../hook/useGetValue";
 import EditProducts from "../../../companents/EditProducts/EditProducts"
+import { FiSearch } from "react-icons/fi";
+
 
 
 
@@ -111,6 +113,10 @@ const Products = () => {
     }));
   };
 
+  // ==== search =======================================================
+
+  const [search, setSearch] = useState("")
+
 
 
 
@@ -125,6 +131,16 @@ const Products = () => {
 
         {/* SCROLL FAQAT SHU YERDA */}
   <div className="product-cards">
+
+    <form className="product-cards-searForm">
+      <label className="product-cards-searForm-label">
+        <span className="product-cards-searForm-label-span">maxsulotni nomi bilan qidiring!</span>
+        
+        <input className="product-cards-searForm-label-inp"
+        onChange={(e)=>setSearch(e.target.value)} type="text" placeholder="Search..." />
+        
+      </label>
+    </form>
     
     <table className="responsive-table">
       <thead>
@@ -142,17 +158,21 @@ const Products = () => {
       </thead>
 
       <tbody>
-        {products.map((product) => {
+        {products
+        .filter((product)=> {
+          return search.toLowerCase() === "" ? product : product.productName.toLowerCase().includes(search)
+        })
+        .map((product) => {
           const brand = brandData.find(
             (b) => String(b.id) === String(product.brandId)
           );
-
           return (
-            <tr key={product.id}>
+            
+            <tr key={product.id}  className={product.currentAmount === 0 ? "sold-out" : ""} >
               <td data-label="brand">{brand?.brandName || "—"}</td>
               <td data-label="nomi">{product.productName}</td>
               <td data-label="rangi">{product.productRang}</td>
-              <td data-label="soni">{product.currentAmount}</td>
+              <td data-label="soni"> {product.currentAmount} </td>
               <td data-label="narxi">{product.comingPrice}</td>
               <td data-label="itogo">{product.camingItogo}</td>
               <td data-label="razmerlari">

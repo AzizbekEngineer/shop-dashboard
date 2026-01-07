@@ -6,6 +6,7 @@ import { LiaGiftSolid } from "react-icons/lia";
 import { HiShoppingCart } from "react-icons/hi";
 import { IoLayers } from "react-icons/io5";
 import { VscPieChart } from "react-icons/vsc";
+import { GiClothes } from "react-icons/gi";
 
 function Sidebar() {
 
@@ -13,7 +14,7 @@ function Sidebar() {
     <section className="sidebar">
       <div>
         <Link to={"/"} className="sidebar__top">
-          <h1>D.37</h1>
+          <h3>D.37</h3>
         </Link>
         <ul className="sidebar__item">
           <li className="sidebar__list">
@@ -30,7 +31,7 @@ function Sidebar() {
           </li>
           <li className="sidebar__list">
             <NavLink to={"products"} className={"sidebar__left__text"}>
-              <LiaGiftSolid />
+              <GiClothes />
               Products
             </NavLink>
           </li>
