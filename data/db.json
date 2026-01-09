@@ -13,17 +13,8 @@
       "brandName": "status"
     },
     {
-<<<<<<< HEAD
-      "id": "60316553-7863-44c2-931f-0cf4b6389839",
-      "brandName": "bl"
-=======
-      "id": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
-      "brandName": "lacos kurtka"
-    },
-    {
-      "id": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
-      "brandName": "Kurtkalar"
->>>>>>> aede1930a6d4f8583960f022bed712aa4bef5376
+      "brandName": "blessed",
+      "id": "60316553-7863-44c2-931f-0cf4b6389839"
     }
   ],
   "products": [
@@ -51,27 +42,6 @@
           "count": 9
         }
       ]
-    },
-    {
-      "id": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
-      "productName": "kaket",
-      "productRang": "bej",
-      "comingPrice": 15000,
-      "comingTotalAmount": 20,
-      "currentAmount": 7,
-      "camingItogo": 300000,
-      "sizes": [
-        {
-          "size": "S",
-          "count": 4
-        },
-        {
-          "size": "M",
-          "count": 3
-        }
-      ],
-      "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
-      "createdAt": "2025-12-20T16:34:56.006Z"
     },
     {
       "id": "1434e2fd-00ff-48f9-bf86-0888efb2ea11",
@@ -128,30 +98,8 @@
           "count": 3
         }
       ],
-<<<<<<< HEAD
       "brandId": "e155b3c5-6b6d-4666-a13d-ebcdf48a4975",
       "createdAt": "2026-01-05T10:03:58.075Z"
-    },
-    {
-      "id": "83b062c5-c136-4044-b4e6-954163a16204",
-      "productName": "ottoo",
-      "productRang": "yeshil",
-      "comingPrice": 12000,
-      "comingTotalAmount": 22,
-      "currentAmount": 22,
-      "camingItogo": 264000,
-      "sizes": [
-        {
-          "size": "S",
-          "count": 11
-        },
-        {
-          "size": "M",
-          "count": 11
-        }
-      ],
-      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
-      "createdAt": "2026-01-07T07:55:07.927Z"
     },
     {
       "id": "8372b932-6634-4f64-896d-dea3d9f147ab",
@@ -167,18 +115,39 @@
           "count": 0
         }
       ],
-      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
-      "createdAt": "2026-01-07T09:59:52.872Z"
-=======
       "brandId": "c72f6329-8ed2-41f5-80e5-4f85a9864184",
       "createdAt": "2025-12-26T12:12:52.290Z"
->>>>>>> aede1930a6d4f8583960f022bed712aa4bef5376
+    },
+    {
+      "id": "9138267d-03ee-4720-b674-1cf37c3fa729",
+      "productName": "vadalas",
+      "productRang": "mavi",
+      "comingPrice": 16999,
+      "comingTotalAmount": 36,
+      "currentAmount": 36,
+      "camingItogo": 611964,
+      "sizes": [
+        {
+          "size": "50",
+          "count": 12
+        },
+        {
+          "size": "52",
+          "count": 12
+        },
+        {
+          "size": "54",
+          "count": 12
+        }
+      ],
+      "brandId": "60316553-7863-44c2-931f-0cf4b6389839",
+      "createdAt": "2026-01-09T09:13:41.857Z"
     }
   ],
   "sales": [
     {
       "id": "7135147f-49f4-4324-b054-ca23916a411d",
-      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productId": null,
       "productName": "kaket",
       "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
       "soldSizes": [
@@ -220,7 +189,7 @@
     },
     {
       "id": "94535394-782d-4453-81f6-3e937fc46867",
-      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productId": null,
       "productName": "kaket",
       "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
       "soldSizes": [
@@ -274,7 +243,7 @@
     },
     {
       "id": "d8cbfbb8-8855-4134-873e-faf4e3738e7b",
-      "productId": "eca0de7b-4024-4854-b0b7-3dc1fd27de40",
+      "productId": null,
       "productName": "kaket",
       "brandId": "2bf6f153-8953-478f-a97d-9c7c834bb35b",
       "soldSizes": [
@@ -291,7 +260,6 @@
           "after": 3
         }
       ],
-<<<<<<< HEAD
       "sellPrice": 46000,
       "totalSold": 1,
       "soldItogo": 46000,
@@ -310,11 +278,6 @@
           "after": 0
         }
       ],
-      "sellPrice": 21000,
-      "totalSold": 1,
-      "soldItogo": 21000,
-      "createdAt": "2026-01-07"
-=======
       "sellPrice": 20000,
       "totalSold": 8,
       "soldItogo": 160000,
@@ -361,7 +324,6 @@
       "totalSold": 10,
       "soldItogo": 1500000,
       "createdAt": "2025-12-26"
->>>>>>> aede1930a6d4f8583960f022bed712aa4bef5376
     }
   ]
 }

@@ -32,6 +32,29 @@
             }
         }
 
+        .addNewSize{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            // border: 1px solid red;
+            margin: 15px 2px auto auto;
+            width: 70%;
+
+
+           &-label{
+                // background: red;
+                width: 30%;
+                margin: 0 10px 0;
+           }
+
+           &-btn{
+            // background-color: red;
+            width: 30%;
+            margin: 0;
+            
+           }
+        }
+
         .editSizes{
             margin: 15px;
             display: grid;
@@ -47,7 +70,7 @@
 
 
             &-span{
-                margin-right: 15px;
+                margin-right: 10px;
                 font-weight: 700;
             }
 
@@ -58,7 +81,15 @@
                 border: none;
                 background-color: black;
                 color: white;
-                width: 90px;
+                width: 40px;
+            }
+
+            &-btn{
+                background-color: black;
+                border: none;
+                padding: 3px;
+                border-radius: 5px;
+                margin-left: 10px;
             }
         }
 
@@ -123,10 +154,33 @@
         //     }
         // }
 
+        .addNewSize{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            // border: 1px solid red;
+            margin: 15px 2px auto auto;
+            width: 100%;
+
+
+           &-label{
+                // background: red;
+                width: 30%;
+                margin: 0 10px 0;
+           }
+
+           &-btn{
+            // background-color: red;
+            width: 35%;
+            margin: 0;
+            
+           }
+        }
+
         .editSizes{
             // margin: 15px;
             // display: grid;
-            // grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 6px;
 
 
@@ -138,7 +192,7 @@
 
 
             &-span{
-                margin-right: 8px;
+                margin-right: 3px;
                 font-weight: 400;
             }
 
@@ -150,6 +204,14 @@
                 // background-color: black;
                 // color: white;
                 width: 40px;
+            }
+
+            &-btn{
+                // background-color: black;
+                // border: none;
+                // padding: 3px;
+                // border-radius: 5px;
+                margin-left: 3px;
             }
         }
 

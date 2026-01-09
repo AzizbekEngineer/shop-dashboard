@@ -4,7 +4,6 @@ import "./brands.scss";
 import {
   useCreateBrandMutation,
   useGetBrandsQuery,
-  useDeleteBrandMutation,
 } from "../../../context/api/brandsApi";
 import Modal from "../../../companents/Modal/Modal";
 import { useGetValue } from "../../../hook/useGetValue";

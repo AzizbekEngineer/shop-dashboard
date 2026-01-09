@@ -2,6 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import {
   useCreateProductMutation,
+  useDeleteProductMutation,
   useGetProductsQuery,
 } from "../../../context/api/productsApi";
 import "./products.scss";
@@ -9,7 +10,7 @@ import Modal from "../../../companents/Modal/Modal";
 import { useGetBrandsQuery } from "../../../context/api/brandsApi";
 import { useGetValue } from "../../../hook/useGetValue";
 import EditProducts from "../../../companents/EditProducts/EditProducts"
-import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "react-icons/fi";
 
 
 
@@ -30,10 +31,12 @@ const Products = () => {
 
   const [createProduct] = useCreateProductMutation();
   const [createModal, setCreateModal] = useState(false);
-
   const { data: products = [], isLoading } = useGetProductsQuery();
   const { data: brandData = [], } = useGetBrandsQuery();
   const [editProducts, setEditProducts] = useState(null)
+  const [search, setSearch] = useState("")
+  const [deleteProduct] = useDeleteProductMutation();
+
   
 
 
@@ -60,12 +63,9 @@ const Products = () => {
       productName: formData.productName,
       productRang: formData.productRang,
       comingPrice: Number(formData.comingPrice),
-
       comingTotalAmount: totalAmount,
       currentAmount: totalAmount,
-
       camingItogo: itogo,
-
       sizes: formData.sizes.map((s) => ({
         size: s.size,
         count: Number(s.count),
@@ -80,6 +80,20 @@ const Products = () => {
     setFormData(initialState);
     setCreateModal(false);
   };
+
+  // ===  DELETE=====
+  const handleDelete = async (id) => {
+  const confirmDelete = window.confirm("Rostdan o'chirmoqchimisiz?");
+  if (!confirmDelete) return;
+
+  try {
+    await deleteProduct(id).unwrap();
+    console.log("Product deleted:", id);
+  } catch (err) {
+    console.error("Product delete failed:", err);
+  }
+};
+
 
   const allSizes = ["S", "M", "L", "XL", "2XL", "50", "52", "54"];
 
@@ -112,14 +126,6 @@ const Products = () => {
       sizes: prev.sizes.filter((s) => s.size !== size),
     }));
   };
-
-  // ==== search =======================================================
-
-  const [search, setSearch] = useState("")
-
-
-
-
 
 
   return (
@@ -187,6 +193,9 @@ const Products = () => {
               </td>
               <td data-label="tahrirlash">
                 <button className="responsive-table-btn" onClick={()=>setEditProducts(product)}>edit 📝</button>
+                  <button className="responsive-table-btn delete-btn" onClick={() => handleDelete(product.id)} >
+                    delete ❌
+                  </button>
               </td>
             </tr>
           );

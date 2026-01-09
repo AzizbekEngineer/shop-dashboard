@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react"
 import "./EditBrends.scss"
+import {
+  useUpdateBrandMutation,
+} from "../../src/context/api/brandsApi";
 
 const EditBrends = ({brend, onClose}) => {
+      const [upDateBrand] = useUpdateBrandMutation();
+    
     // console.log(brend);
     
 
@@ -20,20 +25,20 @@ const EditBrends = ({brend, onClose}) => {
 
 
 
-    const handelSubmit = (e)=>{
-        e.preventDefault()
+    const handelSubmit = async (e) => {
+    e.preventDefault();
 
-        const upDateBrend = {
-            ...brend,
-            brandName: isForm.brandName,
-        }
-        // shu yerda patch qilinadi
-        console.log(upDateBrend);
-        
+    try {
+      await upDateBrand({
+        id: brend.id,
+        body: { brandName: isForm.brandName },
+      }).unwrap();
 
-
-        onClose()
+      onClose();
+    } catch (error) {
+      console.error("Brand update failed:", error);
     }
+  };
 
 
   return (
