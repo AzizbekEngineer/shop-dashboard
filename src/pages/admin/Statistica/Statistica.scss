@@ -1,40 +1,56 @@
-.statistica{
-    padding: 15px;
+.statistica {
+  padding: 15px;
 
-       .statisticaTable{
-  width: 100%;
-  border-collapse: collapse;
+  .statisticaTable {
+    width: 100%;
+    border-collapse: collapse;
 
-  caption{
-    text-transform: uppercase;
-    padding: 15px 0;
-    background-color: black;
-    color: white;
-    border-bottom: 1px solid #333;
-  }
+    caption {
+      text-transform: uppercase;
+      padding: 15px 0;
+      background-color: black;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
 
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    color: white;
-    border-bottom: 1px solid #333;
-    text-transform: capitalize;
-  }
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      color: white;
+      border-bottom: 1px solid #333;
+      text-transform: capitalize;
+    }
 
-  thead {
-    background: #000;
-  }
+    thead {
+      background: #000;
+    }
 
-  tbody tr {
-    border-bottom: 1px solid #333;
-    background: black;
+    tbody tr {
+      border-bottom: 1px solid #333;
+      background: black;
+    }
   }
 }
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+
+  select,
+  input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
 }
 
-@media(max-width: 430px){
-   .statisticaTable,
+@media(max-width: 430px) {
+
+  .statisticaTable,
   .statisticaTable thead,
   .statisticaTable tbody,
   .statisticaTable th,
@@ -44,7 +60,7 @@
     width: 100%;
   }
 
-  caption{
+  caption {
     display: block;
     border-radius: 8px;
     margin-bottom: 10px;
