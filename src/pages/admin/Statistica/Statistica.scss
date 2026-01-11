@@ -33,68 +33,116 @@
   }
 }
 
-.filters {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
+.statistica {
+  // padding: 16px;
 
-  select,
-  input {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    select,
+    input {
+      min-width: 180px;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #dcdcdc;
+      outline: none;
+      transition: all 0.2s ease;
+      background: #fafafa;
+
+      &:focus {
+        border-color: #4f46e5;
+        background: #fff;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+      }
+    }
+
+    input[type="date"] {
+      min-width: 160px;
+    }
+
+    .resetBtn {
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #ef4444;
+      color: #fff;
+      transition: all 0.2s ease;
+      margin-left: auto;
+
+      &:hover {
+        background: #dc2626;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  /* EMPTY */
+  .empty {
+    padding: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: #6b7280;
+  }
+
+  /* LOADING */
+  &.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
   }
 }
 
-@media(max-width: 430px) {
+/* =================== RESPONSIVE =================== */
 
-  .statisticaTable,
-  .statisticaTable thead,
-  .statisticaTable tbody,
-  .statisticaTable th,
-  .statisticaTable td,
-  .statisticaTable tr {
-    display: block;
-    width: 100%;
+@media (max-width: 768px) {
+  .statistica {
+    .filters {
+
+      select,
+      input {
+        min-width: 100%;
+      }
+
+      .resetBtn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
   }
+}
 
-  caption {
-    display: block;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
+@media (max-width: 360px) {
+  .statistica {
+    padding: 8px;
 
-  /* head yashiriladi */
-  .statisticaTable thead {
-    display: none;
-  }
+    .filters {
+      padding: 10px;
+      gap: 8px;
 
-  /* har bir row = CARD */
-  .statisticaTable tr {
-    background: #0f1115;
-    border: 1px solid #2a2d3a;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 15px;
-  }
+      select,
+      input {
+        font-size: 13px;
+        padding: 7px 10px;
+      }
 
-  /* har bir katak */
-  .statisticaTable td {
-    display: flex;
-    // justify-content: space-between;
-    gap: 10px;
-    padding: 6px 0;
-    font-size: 14px;
-    text-transform: capitalize;
-  }
-
-  /* LABEL (chap tomoni) */
-  .statisticaTable td::before {
-    content: attr(data-cell) ":";
-    font-weight: 600;
-    color: #9ca3af;
-    text-transform: capitalize;
+      .resetBtn {
+        font-size: 13px;
+        padding: 7px;
+      }
+    }
   }
 }

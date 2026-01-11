@@ -1,78 +1,3 @@
-// import "./Statistica.scss";
-// import { useGetBrandsQuery } from "../../../context/api/brandsApi";
-// import {
-//   useCreateProductMutation,
-//   useGetProductsQuery,
-//   useGetSalesQuery,
-// } from "../../../context/api/productsApi";
-
-// const Statistica = () => {
-//   const { data: soldProducts, isLoading } = useGetSalesQuery();
-//   const { data: products } = useGetProductsQuery();
-//   const { data: soldBrandData } = useGetBrandsQuery();
-//   if (isLoading) return null;
-
-//   const productsMap = products?.reduce((acc, p) => {
-//     acc[p.id] = p;
-//     return acc;
-//   }, {});
-
-//   const getProfit = (sale) => {
-//     const product = productsMap?.[sale.productId];
-//     if (!product) return 0;
-
-//     return sale.soldItogo - sale.totalSold * product.comingPrice;
-//   };
-
-//   return (
-//     <div className="statistica">
-//       <table className="statisticaTable">
-//         <caption>
-//           statistica
-//         </caption>
-//         <thead>
-//           <tr>
-//             <th>brendi</th>
-//             <th>nomi</th>
-//             <th>razmeri</th>
-//             <th>narxi</th>
-//             <th>kelishi</th>
-//             <th>itogo</th>
-//             <th>foyda</th>
-//             <th>sana</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {soldProducts.map((sP) => {
-//             const brand = soldBrandData?.find((b) => b.id === sP.brandId);
-//             const comingP = products?.find((cP) => cP.id === sP.productId);
-
-//             return (
-//               <tr key={sP.id}>
-//                 <td data-cell="brendi">{brand?.brandName}</td>
-//                 <td data-cell="nomi">{sP.productName}</td>
-//                 <td data-cell="razmeri">
-//                   {sP.soldSizes.map((s) => (
-//                     <div key={s.size}>
-//                       {s.size}-{s.sold}
-//                     </div>
-//                   ))}
-//                 </td>
-//                 <td data-cell="narxi">{sP.sellPrice}</td>
-//                 <td data-cell="kelishi">{comingP?.comingPrice}</td>
-//                 <td data-cell="itogo">{sP.soldItogo}</td>
-//                 <td data-cell="foyda"> {getProfit(sP)}</td>
-//                 <td data-cell="sana">{new Date(sP.createdAt).toLocaleString()}</td>
-//               </tr>
-//             );
-//           })}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default Statistica;
 import "./Statistica.scss";
 import { useState, useMemo } from "react";
 import { useGetBrandsQuery } from "../../../context/api/brandsApi";
@@ -90,8 +15,7 @@ const Statistica = () => {
   // FILTER STATES
   const [brandId, setBrandId] = useState("");
   const [search, setSearch] = useState("");
-  const [fromDate, setFromDate] = useState("");
-  const [toDate, setToDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [minProfit, setMinProfit] = useState("");
@@ -115,7 +39,7 @@ const Statistica = () => {
   // FILTERED SALES
   const filteredSales = useMemo(() => {
     return soldProducts.filter((s) => {
-      const saleDate = new Date(s.createdAt);
+      const saleDate = new Date(s.createdAt).toISOString().split("T")[0];
       const profit = getProfit(s);
       const productName = (s.productName || "").toLowerCase();
 
@@ -128,8 +52,8 @@ const Statistica = () => {
       if (minProfit && profit < +minProfit) return false;
       if (maxProfit && profit > +maxProfit) return false;
 
-      if (fromDate && saleDate < new Date(fromDate)) return false;
-      if (toDate && saleDate > new Date(toDate)) return false;
+      // 👉 Bitta sana bo‘yicha filter
+      if (selectedDate && saleDate !== selectedDate) return false;
 
       return true;
     });
@@ -137,12 +61,11 @@ const Statistica = () => {
     soldProducts,
     brandId,
     search,
+    selectedDate,
     minPrice,
     maxPrice,
     minProfit,
     maxProfit,
-    fromDate,
-    toDate,
     productsMap,
   ]);
 
@@ -150,8 +73,7 @@ const Statistica = () => {
   const resetFilters = () => {
     setBrandId("");
     setSearch("");
-    setFromDate("");
-    setToDate("");
+    setSelectedDate("");
     setMinPrice("");
     setMaxPrice("");
     setMinProfit("");
@@ -183,44 +105,11 @@ const Statistica = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
 
-        <input
-          type="number"
-          placeholder="Min narx"
-          value={minPrice}
-          onChange={(e) => setMinPrice(e.target.value)}
-        />
-
-        <input
-          type="number"
-          placeholder="Max narx"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-        />
-
-        <input
-          type="number"
-          placeholder="Min foyda"
-          value={minProfit}
-          onChange={(e) => setMinProfit(e.target.value)}
-        />
-
-        <input
-          type="number"
-          placeholder="Max foyda"
-          value={maxProfit}
-          onChange={(e) => setMaxProfit(e.target.value)}
-        />
-
+        {/* Bitta sana */}
         <input
           type="date"
-          value={fromDate}
-          onChange={(e) => setFromDate(e.target.value)}
-        />
-
-        <input
-          type="date"
-          value={toDate}
-          onChange={(e) => setToDate(e.target.value)}
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
         />
 
         <button className="resetBtn" onClick={resetFilters}>
@@ -266,7 +155,7 @@ const Statistica = () => {
                   <td>{product?.comingPrice}</td>
                   <td>{s.soldItogo}</td>
                   <td>{getProfit(s)}</td>
-                  <td>{new Date(s.createdAt).toLocaleString()}</td>
+                  <td>{new Date(s.createdAt).toLocaleDateString()}</td>
                 </tr>
               );
             })}
