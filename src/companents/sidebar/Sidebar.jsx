@@ -20,19 +20,19 @@ function Sidebar() {
           <li className="sidebar__list">
             <NavLink to={"Sell"} className={"sidebar__left__text"}>
               <HiShoppingCart />
-              Sell Products
+              Sotuv Bo'limi
             </NavLink>
           </li>
           <li className="sidebar__list">
             <NavLink to={"brands"} className={"sidebar__left__text"}>
               <IoLayers />
-              Brands
+              Brendlar
             </NavLink>
           </li>
           <li className="sidebar__list">
             <NavLink to={"products"} className={"sidebar__left__text"}>
               <GiClothes />
-              Products
+              Maxsulotlar
             </NavLink>
           </li>
           <li className="sidebar__list">

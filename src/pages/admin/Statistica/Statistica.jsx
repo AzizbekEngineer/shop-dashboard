@@ -233,13 +233,17 @@ const Statistica = () => {
         <div className="empty">Maʼlumot topilmadi</div>
       ) : (
         <table className="statisticaTable">
+          <caption>
+              statistica
+            </caption>
           <thead>
+            
             <tr>
               <th>Brend</th>
               <th>Nomi</th>
               <th>Razmer</th>
-              <th>Narx</th>
               <th>Kelishi</th>
+              <th>Sotilishi</th>
               <th>Itogo</th>
               <th>Foyda</th>
               <th>Sana</th>
@@ -258,12 +262,12 @@ const Statistica = () => {
                   <td>
                     {s.soldSizes?.map((sz) => (
                       <div key={sz.size}>
-                        {sz.size} — {sz.sold}
+                        {sz.size} - {sz.sold}
                       </div>
                     ))}
                   </td>
-                  <td>{s.sellPrice}</td>
                   <td>{product?.comingPrice}</td>
+                  <td>{s.sellPrice}</td>
                   <td>{s.soldItogo}</td>
                   <td>{getProfit(s)}</td>
                   <td>{new Date(s.createdAt).toLocaleString()}</td>
